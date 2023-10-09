@@ -1,0 +1,2912 @@
+• Task: 4
+1. Redirect the output of “date” command to “/tmp/SavEd-timestamp
+Ans:To redirect the output of a command to a file in Unix-based systems (Linux, macOS), you can use the > symbol to redirect standard output. If you want to include a timestamp in the file name, you can use the date command to generate the timestamp. Here's how you can redirect the output of the "data" command to a file with a timestamp in the filename:
+
+For Unix-based Systems (Linux, macOS):
+
+Open your terminal and use the following command to redirect the output of the "data" command to a file in the "/tmp" directory with a timestamp in the filename:
+
+perl
+Copy code
+data > /tmp/Saved-$(date +%Y-%m-%d_%H-%M-%S).txt
+This command uses date +%Y-%m-%d_%H-%M-%S to generate a timestamp in the format "YYYY-MM-DD_HH-MM-SS" and includes it in the filename.
+
+The output of the "data" command will be saved to a file with a timestamp in the filename, in the "/tmp" directory. Feel free to modify the timestamp format or the file path according to your preferences.
+ 
+2. Delete the Saved-timestamp file.
+AnS:To delete a file named "Saved-timestamp" in the "/tmp" directory, you can use the rm command. Here's how you can do it:
+
+rm /tmp/Saved-timestamp
+This command will remove the "Saved-timestamp" file from the "/tmp" directory. Please ensure that you have the necessary permissions to delete files in the specified directory
+
+3. Send command output to file, and errors to different file.
+Ans: To redirect the standard output to one file and errors to a different file in Unix-based systems (Linux, macOS), you can use the > and 2> redirection operators. Here's how you can achieve this:
+
+Redirecting Standard Output to One File and Errors to Another File:
+
+bash
+Copy code
+your_command > output.log 2> error.log
+Replace your_command with the command whose output you want to redirect.
+
+> redirects standard output to the specified file (output.log in this case).
+2> redirects standard error to the specified file (error.log in this case).
+If you want to append to the output and error files instead of overwriting them, you can use >> instead of > and 2>> instead of 2>.
+
+bash
+Copy code
+your_command >> output.log 2>> error.log
+This will append the output and errors to the respective log files.
+
+Make sure to replace your_command with the actual command whose output and errors you want to redirect, and adjust the file names (output.log and error.log) to your preferences.
+
+4. Send output and errors to the same new, empty file
+Ans: To send both standard output (stdout) and standard error (stderr) to the same new, empty file in a Linux or Unix-like environment, you can use the following shell command:
+
+command &> filename.log
+Replace command with the actual command you want to run, and replace filename.log with the desired name of the file where you want to redirect the output and errors.
+
+For example, if you want to redirect the output and errors of a command called my_command to a file named output_errors.log, you would use:
+
+my_command &> output_errors.log
+This command will create a new, empty file named output_errors.log (or overwrite it if it already exists) and redirect both stdout and stderr to that file.
+
+
+5. Run command, save output in a file, discard error messages.
+Ans:To run a command and save the output in a file while discarding error messages, you can redirect the standard error (stderr) to /dev/null, which essentially discards the error messages. Here's how you can do it in a Unix-like environment:
+
+command > output.log 2>/dev/null
+Replace command with the actual command you want to run, and replace output.log with the desired name of the file where you want to redirect the standard output (stdout).
+
+For example, if you want to run a command called my_command and save its output in a file named output.log, discarding error messages, you would use:
+
+my_command > output.log 2>/dev/null
+This command will create or overwrite the file output.log with the standard output (stdout) of the command, and any error messages will be discarded (redirected to /dev/null).
+
+6. Open and learn “ vimtutor “
+Ans:To open and learn from the "vimtutor" in your terminal, follow these steps:
+
+Open a terminal window.
+
+Type the following command and press Enter:
+
+vimtutor
+This command will launch the Vim text editor and open the "vimtutor" tutorial, which is a guided interactive tutorial to help you learn the basics of using Vim.
+
+Follow the instructions in the tutorial to learn and practice using Vim commands and features.
+
+The "vimtutor" tutorial provides a hands-on way to learn the basics of Vim, a powerful and popular text editor. It covers essential commands and concepts to help you get started with using Vim effectively.
+ 
+7. Edit any file with “gedit “
+Ans: Type the following command to open "gedit" and edit a specific file:
+
+gedit /path/to/your/file
+Replace "/path/to/your/file" with the actual path to the file you want to edit. For example:
+
+gedit ~/Documents/example.txt
+This command will open "gedit" with the specified file for editing.
+
+Make your desired changes in the "gedit" editor.
+
+Save the file by clicking on the "Save" button or by selecting "Save" from the "File" menu.
+
+Close "gedit" when you're done editing by clicking the "Close" button or selecting "Quit" from the "File" menu.
+
+Make sure to replace "/path/to/your/file" with the actual path and filename of the file you want to edit.
+
+8. Redirect a long listing of all content in student’s home directory,
+including hidden directories and files, into a file named “
+Ans:To redirect a long listing (ls -l) of all content in a student's home directory to a file, you can use the following command:
+
+ls -l /home/student > directory_listing.txt
+Replace "student" with the student's username or the appropriate home directory path, if different. This command will list all the contents in the specified directory in a long format and save the output to a file named "directory_listing.txt" in the current directory.
+
+If you want to include hidden files (those starting with a dot), add the -a option:
+
+ls -la /home/student > directory_listing.txt
+This will list all contents, including hidden files, in the specified directory and save the output to the "directory_listing.txt" file.
+
+9. editing_final_lab.txt “
+Ans: If you want to edit a file named "editing_final_lab.txt" using the "gedit" text editor, you can use the gedit command followed by the file path:
+
+gedit editing_final_lab.txt
+This will open the "editing_final_lab.txt" file in the "gedit" editor, allowing you to make modifications to the file. Make sure the file is in the current directory or provide the correct path to the file if it's in a different location.
+
+10.Remove the time column, but leave the month and day on all line
+(block selection visual mode)
+Ans: If you want to list the contents of a directory, remove the time column but leave the month and day in the output, you can use the ls command with specific options to achieve this. To remove the time column and only display the month and day, you can use the --time-style option along with custom formatting.
+
+Here's an example command to achieve this:
+
+ls --time-style="+%b %d" -l
+Explanation:
+
+ls is the command to list directory contents.
+--time-style="+%b %d" sets the time style to display only the month (%b) and day (%d).
+-l displays the output in a detailed (long) listing format.
+This command will list the contents of the current directory, showing the month and day without the time column. Adjust the directory path as needed to list the contents of a specific directory.
+
+• Task: 5
+1. Get backup of /etc
+Ans:Creating a backup of the entire /etc directory is a critical task and should be done with caution, as modifying or restoring system configuration files can have significant impacts on your system. Here's a way to create a backup of the /etc directory:
+
+sudo tar -cvzf /path/to/backup/etc_backup.tar.gz /etc
+Explanation:
+
+sudo is used to run the command with superuser privileges because accessing system directories like /etc typically requires elevated permissions.
+tar is the command used for archiving files and directories.
+-c stands for create a new archive.
+-v stands for verbose mode to display the progress.
+-z stands for compressing the archive using gzip.
+-f stands for specifying the filename of the archive.
+/path/to/backup/etc_backup.tar.gz is the desired path and filename for the backup archive.
+/etc is the directory you want to back up.
+Replace /path/to/backup/etc_backup.tar.gz with the actual path and filename you want to use for the backup. Ensure that you have appropriate permissions and that the destination path is writable.
+
+Please exercise caution when working with system directories and backups, as mistakes in this area can have serious consequences for your system 
+
+2. Create new directory “FoLDER”
+Ans:To create a new directory named "Folder," you can use the mkdir command in a terminal:
+
+mkdir Folder
+This command will create a new directory named "Folder" in the current working directory. If you want to create the directory in a specific location, you can provide the full or relative path to that location:
+
+mkdir /path/to/your/directory/Folder
+Replace "/path/to/your/directory/" with the desired path where you want to create the "Folder" directory.
+
+3. Extract this new backup in FoLDER directory
+Ans: To extract the backup archive into the "Folder" directory, you can use the tar command with the -x option for extraction and the -C option to specify the target directory. Assuming the backup archive is named "etc_backup.tar.gz" and is located in the current directory, follow these steps:
+
+Navigate to the directory where the backup archive is located:
+
+cd /path/to/your/directory/containing/the/backup
+Extract the backup into the "Folder" directory:
+
+tar -xzvf etc_backup.tar.gz -C Folder
+Replace /path/to/your/directory/containing/the/backup with the actual path to the directory containing the backup archive, and replace "Folder" with the target directory where you want to extract the backup.
+
+This command will extract the contents of the backup archive into the "Folder" directory. Make sure the "Folder" directory exists before running the extraction command.
+
+4. Check the content of this new backup without extracting
+Ans: To view the contents of the backup archive without extracting it, you can use the tar command with the --list option (-t). This will display the contents of the archive. Assuming the backup archive is named "etc_backup.tar.gz", follow these steps:
+
+tar -tzvf etc_backup.tar.gz
+This command will list the contents of the backup archive, including the file names and directories, without actually extracting them.
+
+Make sure to replace "etc_backup.tar.gz" with the actual name of your backup archive.
+
+5. Compress /etc
+Ans: To compress the /etc directory into an archive, you can use the tar command with the -czvf options. This will create a compressed archive (tarball) of the /etc directory. Here's how you can do it:
+
+sudo tar -czvf etc_backup.tar.gz /etc
+Explanation:
+
+sudo is used to run the command with superuser privileges because accessing system directories like /etc typically requires elevated permissions.
+tar is the command used for archiving files and directories.
+-c stands for create a new archive.
+-z stands for compressing the archive using gzip.
+-v stands for verbose mode to display the progress.
+-f stands for specifying the filename of the archive.
+/etc is the directory you want to compress.
+This command will compress the /etc directory and create a compressed archive named "etc_backup.tar.gz" in the current working directory.
+
+Please exercise caution when working with system directories, and creating backups is important to ensure the safety of critical system files.
+
+6. Check the size after compression
+Ans:To check the size of the compressed archive after compressing the /etc directory, you can use the du (disk usage) command. Here's how you can do it:
+
+du -h etc_backup.tar.gz
+Explanation:
+
+du is the command used to estimate file space usage.
+-h stands for human-readable output, which makes the output easier to read.
+This command will display the size of the compressed archive "etc_backup.tar.gz" in a human-readable format.
+
+Please replace "etc_backup.tar.gz" with the actual name of your compressed archive if it's different.
+
+7. Graphically manage extract and compression
+Ans:To graphically manage the extraction and compression of files and directories, you can use a file manager or archive management tool that provides a graphical interface. One commonly used tool is "File Roller," which is a graphical archive manager for the GNOME desktop environment.
+
+Here's how you can use "File Roller" to extract and compress files and directories:
+
+Extracting an Archive (e.g., tar.gz file):
+Open your file manager (e.g., Nautilus for GNOME).
+
+Navigate to the location where the archive is located.
+
+Double-click on the archive file (e.g., "etc_backup.tar.gz"). "File Roller" will open.
+
+Click the "Extract" button and choose the destination directory where you want to extract the contents.
+
+Compressing Files or Directories into an Archive (e.g., tar.gz):
+Open "File Roller" (you can typically find it in your application menu under "Archive Manager" or "File Roller").
+
+Click the "New" button or select "File" > "New Archive" from the menu.
+
+Choose the archive format you want (e.g., "tar.gz").
+
+Add the files or directories you want to compress by dragging them into the "File Roller" window.
+
+Click the "Create" or "Save" button and specify the archive name and location.
+
+Using "File Roller" or a similar graphical archive manager provides a user-friendly way to handle archive operations. The steps may vary slightly depending on the file manager or archive manager you are using. If you are using a different desktop environment or file manager, there will be similar tools available for archive management.
+ 
+8. Create new file with vim . name “f1”
+Ans:To create a new file named "f1" using the Vim text editor, follow these steps:
+
+Open a terminal.
+
+Type the following command to create and open the file "f1" in Vim:
+
+vim f1
+This will open the Vim editor with a new or existing file named "f1".
+
+Press i to enter insert mode. You'll see "-- INSERT --" at the bottom of the terminal, indicating that you can start typing and editing the file.
+
+Enter the content you want for the file.
+
+Press Esc to exit insert mode.
+
+Save and exit Vim by typing :wq (which stands for write and quit) and then pressing Enter.
+
+Your file "f1" has now been created and saved using Vim. If "f1" already existed, Vim will open that file for editing; otherwise, it will create a new file named "f1".
+ 
+9. Copy this “f1” on remote desktops’s “/” directory
+Ans:To copy the file "f1" to the root ("/") directory on a remote desktop, you can use the scp (secure copy) command, assuming you have SSH access to the remote desktop. Replace "username" and "remote_ip" with the appropriate values.
+
+scp f1 username@remote_ip:/
+This command will copy the file "f1" to the root directory ("/") on the remote desktop. You'll be prompted to enter the password for the remote user.
+
+If you have a specific directory in mind within the remote root directory where you want to copy the file, you can modify the destination accordingly. For example, to copy the file to "/path/to/some/directory" on the remote desktop:
+
+scp f1 username@remote_ip:/path/to/some/directory/
+Make sure you have the necessary permissions to write to the destination directory on the remote desktop. 
+10.Create new file name 123 on “/”directory of desktop machine
+Ans:Creating a file directly in the root ("/") directory on a desktop machine typically requires administrative privileges. You should exercise caution when creating files in the root directory, as modifying system files can have unintended consequences.
+
+Assuming you have the necessary permissions, you can use the touch command to create an empty file named "123" in the root directory. Open a terminal and run the following command:
+
+sudo touch /123
+The touch command creates an empty file with the specified name (in this case, "123"). The sudo command is used to run the command with superuser privileges, as modifying the root directory requires elevated permissions.
+
+If you intend to create the file in a specific directory within the root ("/") directory, adjust the path accordingly in the touch command. For example:
+
+sudo touch /path/to/directory/123
+Replace "/path/to/directory" with the actual path to the directory within the root directory where you want to create the file "123".
+ 
+11.Start server machine
+Ans:Starting a server machine can vary depending on the specific operating system and server setup you're using. Here are general steps to start a server machine:
+
+Power On the Server:
+
+Ensure the physical server is connected to power and press the power button to turn it on.
+Boot the Operating System:
+
+Wait for the server to boot up and load the operating system. The boot process might involve BIOS/UEFI screens and bootloader.
+Log In:
+
+Log in to the server using the appropriate credentials (username and password).
+Start Services or Applications:
+
+Start the necessary services or applications that you want to run on the server. This could be web servers (e.g., Apache, Nginx), database servers (e.g., MySQL, PostgreSQL), or any other server software.
+Check Server Status:
+
+Verify that the server is running and check the status of the services to ensure they are running as expected.
+Access the Server:
+
+If you need to access the server remotely, use SSH (Secure Shell) or other remote access methods to connect to the server from another machine.
+For more specific instructions tailored to your server setup or operating system, please provide additional details about the server, such as the operating system being used and the specific services you want to start.
+ 
+12.Copy above /123 file on current system location
+Ans:To copy a file named "123" from the root directory ("/") to your current location in the system, you can use the sudo cp command. Assuming you're in the directory where you want to copy the file, follow these steps:
+
+Open a terminal.
+
+Run the following command to copy the file from the root directory to your current location:
+
+sudo cp /123 .
+This command uses sudo to run with superuser privileges because copying from the root directory requires elevated permissions. The cp command is used to copy files. The . at the end indicates the current directory as the destination.
+
+After running this command, the file "123" will be copied to the current directory. If you want to copy it to a specific directory, replace . with the desired destination directory.
+ 
+13.Use sftp command
+Ans:To copy the "123" file from the root directory ("/") to your current system using SFTP (Secure File Transfer Protocol), follow these steps:
+
+Open a terminal on your local machine.
+
+Use the sftp command to connect to the remote server (your server machine). Replace "username" and "remote_ip" with the appropriate values:
+
+sftp username@remote_ip
+You'll be prompted to enter the password for the remote user.
+
+Navigate to the directory containing the "123" file on the remote server:
+
+cd /
+Use the get command to copy the "123" file from the remote server to your local machine's current directory:
+
+get 123
+This will download the "123" file to your current local directory.
+
+Exit the SFTP session when you're done:
+
+exit
+Make sure you have the necessary permissions to access the file and directory on the remote server. 
+• Task: 6
+1. Assign Read, write, executable permission on directory “dir1” for user “u1”
+Ans:To assign read, write, and execute permissions on the directory "dir1" for a specific user "u1", you'll use the chmod command. Assuming you have appropriate permissions to modify the permissions of the directory, follow these steps:
+
+Open a terminal.
+
+Navigate to the parent directory that contains "dir1":
+
+cd /path/to/parent_directory
+Replace "/path/to/parent_directory" with the actual path to the parent directory.
+
+Use the chmod command to set the desired permissions for user "u1" on "dir1":
+
+sudo chmod u+rwx dir1
+This command grants read, write, and execute permissions to user "u1" on the directory "dir1".
+
+If you're not the owner of the directory or you're not in a position to use sudo (superuser) privileges, you may need to work with a system administrator or have appropriate permissions to modify the permissions of the directory.
+
+ 
+2. Add user “u3” in group “red”
+Ans:To add user "u3" to the group "red," you'll use the usermod command. Here are the steps to achieve this:
+
+Open a terminal.
+
+Use the usermod command to add "u3" to the "red" group:
+
+sudo usermod -aG red u3
+Explanation:
+
+sudo is used to run the command with superuser privileges.
+usermod is the command to modify a user account.
+-aG stands for "append to group."
+red is the group to which we want to add the user.
+u3 is the username of the user you want to add to the group.
+After running this command, "u3" will be added to the "red" group. Make sure to replace "red" with the actual group name you want to use. Additionally, replace "u3" with the actual username you want to add to the group.
+ 
+3. Assign Read, write, executable permission on directory “dir1” for group “red”
+Ans:To assign read, write, and execute permissions on the directory "dir1" for the group "red," you can use the chmod command. Here's how you can do it:
+
+Open a terminal.
+
+Navigate to the directory containing "dir1":
+
+cd /path/to/parent_directory
+Replace "/path/to/parent_directory" with the actual path to the parent directory.
+
+Use the chmod command to set the desired permissions for the "red" group on "dir1":
+
+sudo chmod g+rwx dir1
+Explanation:
+
+sudo is used to run the command with superuser privileges.
+chmod is the command to modify file or directory permissions.
+g+rwx grants read, write, and execute permissions to the group.
+dir1 is the directory for which you're modifying permissions.
+This command will grant read, write, and execute permissions to the "red" group on the "dir1" directory. Make sure to replace "dir1" with the actual directory name, and "red" with the actual group name you want to use.
+
+4. Create a new directory name “dir2”
+Ans:To create a new directory named "dir2," you can use the mkdir command. Here's how you can do it:
+
+Open a terminal.
+
+Navigate to the parent directory where you want to create "dir2" (if necessary):
+
+cd /path/to/parent_directory
+Replace "/path/to/parent_directory" with the actual path to the parent directory.
+
+Use the mkdir command to create the "dir2" directory:
+
+mkdir dir2
+This command will create a new directory named "dir2" in the current directory.
+
+If you want to create "dir2" in a specific location, make sure to navigate to the appropriate parent directory before running the mkdir command. 
+
+5. Copy the permission of “dir1” to the new directory “dir2”
+Ans:To copy the permissions of "dir1" to the new directory "dir2," you can use the chmod command along with the --reference option. Here's how you can do it:
+
+chmod --reference=dir1 dir2
+Explanation:
+
+chmod is the command to modify file or directory permissions.
+--reference=dir1 tells the chmod command to copy the permissions from "dir1."
+dir2 is the directory for which you're modifying permissions.
+This command will set the permissions of "dir2" to be the same as "dir1." Make sure to replace "dir2" with the actual directory name, and "dir1" if needed.
+ 
+6. Remove only user’s ACL on “dir”1
+Ans:To remove the user's access control list (ACL) on "dir1," you can use the setfacl command with the -b option. This will remove all extended ACL entries for the user on the directory. Here's how you can do it:
+
+sudo setfacl -b dir1
+Explanation:
+
+sudo is used to run the command with superuser privileges.
+setfacl is the command to set file access control lists.
+-b removes all ACL entries on the specified directory.
+dir1 is the directory for which you're removing the ACL.
+This command will remove the user's ACL on "dir1." Make sure to replace "dir1" with the actual directory name if needed. 
+
+7. Remove all ACL on “dir2”
+Ans:To remove all access control lists (ACLs) on "dir2," you can use the setfacl command with the -b option. This will remove all extended ACL entries on the directory. Here's how you can do it:
+
+sudo setfacl -b dir2
+Explanation:
+
+sudo is used to run the command with superuser privileges.
+setfacl is the command to set file access control lists.
+-b removes all ACL entries on the specified directory.
+dir2 is the directory for which you're removing the ACL.
+This command will remove all ACLs on "dir2." Make sure to replace "dir2" with the actual directory name if needed.
+
+• Task : 7
+
+1. Create any file with the help of VIM
+Ans:To create a new file using Vim, follow these steps:
+
+Open a terminal.
+
+Type the following command to create and open a new file using Vim:
+
+vim filename
+Replace "filename" with the desired name for your new file.
+
+For example, to create a file named "example.txt":
+
+vim example.txt
+Press i to enter insert mode. You'll see "-- INSERT --" at the bottom of the terminal, indicating that you can start typing and editing the file.
+
+Enter the content you want for the file.
+
+Press Esc to exit insert mode.
+
+Save the file by typing :w and pressing Enter. This writes the changes to the file.
+
+Exit Vim by typing :q and pressing Enter. If you've made changes and haven't saved them, you can force quit Vim by typing :q! and pressing Enter.
+
+Your file is now created and saved using Vim.
+
+2. Replacing text in VIM
+Ans:To replace text in Vim, you can use the following steps:
+
+Open the file in Vim:
+
+bash
+Copy code
+vim filename
+Replace "filename" with the name of the file you want to edit.
+
+Press i to enter insert mode or a to enter insert mode after the current character.
+
+Navigate to the location where you want to start editing using the arrow keys or other movement keys.
+
+Start typing to replace the existing text.
+
+To replace a specific word or phrase, position the cursor on the first character of the word or phrase you want to replace.
+
+Press R to enter replace mode. This allows you to overwrite existing text without having to delete it first.
+
+Type the replacement text. The new text will replace the existing text character by character.
+
+Press Esc to exit insert or replace mode.
+
+Save the changes by typing :w and pressing Enter.
+
+Exit Vim by typing :q and pressing Enter.
+
+If you want to replace occurrences of a specific word or phrase throughout the file, you can use the :s command followed by the search pattern and replacement. For example, to replace all occurrences of "old_text" with "new_text", you would use:
+
+:%s/old_text/new_text/g
+%s tells Vim to substitute throughout the file.
+old_text is the text you want to replace.
+new_text is the replacement text.
+g stands for global, meaning replace all occurrences on a line. If you omit g, only the first occurrence on each line will be replaced.
+Press Enter to execute the substitution.
+
+3. Copy and Paste any contents in VIM
+Ans:In Vim, you can copy and paste text using different commands. Here's how you can do it:
+
+Copy (Yank) and Paste within Vim:
+
+To copy a line, position the cursor on the line and type yy (yank line).
+To copy multiple lines, specify the number of lines before yy. For example, to copy 3 lines, type 3yy.
+To paste the copied lines, position the cursor where you want to paste and type p (paste after cursor) or P (paste before cursor).
+Copy to Clipboard and Paste from Clipboard:
+
+To copy text to the system clipboard (yank), you need to be in visual mode. Press v to enter visual mode, select the text you want to copy using arrow keys or other movement keys, and then type y (yank).
+To paste from the system clipboard, use "*p (paste from the clipboard) in command mode.
+Copy and Cut in Normal Mode:
+
+To copy a word, position the cursor on the word and type yw (yank word).
+To cut (delete and copy) a word, position the cursor on the word and type dw (delete word).
+Remember, in Vim, the copied or cut text is stored in a buffer and can be pasted using the p or P commands. Additionally, Vim supports multiple buffers for copy and paste operations.
+
+Once you've copied or yanked the text, you can paste it using the p command to paste after the cursor or the P command to paste before the cursor. To copy text to the clipboard, you'll need Vim with clipboard support (e.g., GVim or Vim with clipboard support compiled in).
+ 
+4. Search any content in VIM
+Ans:To search for specific content within Vim, you can use the / or ? command. Here's how:
+
+Forward Search (/):
+
+Press /.
+Type the text you want to search for.
+Press Enter.
+For example, to search for the word "example", you would type /example and press Enter. Vim will highlight the first occurrence of "example" in the file.
+
+Backward Search (?):
+
+Press ?.
+Type the text you want to search for.
+Press Enter.
+For example, to search for the word "example" in the reverse direction, you would type ?example and press Enter. Vim will highlight the first occurrence of "example" in the reverse direction.
+
+Navigate through Search Results:
+
+After searching, you can navigate through the search results:
+Press n to jump to the next occurrence.
+Press N (shift + n) to jump to the previous occurrence.
+Case-Insensitive Search:
+
+To perform a case-insensitive search, add \c before the search pattern. For example, to search for "example" case-insensitively, you would type /\cexample.
+Case-Sensitive Search:
+
+To perform a case-sensitive search, add \C before the search pattern. For example, to search for "example" with case-sensitivity, you would type /example\C.
+Search and Replace:
+
+To search and replace occurrences of a pattern, you can use the :s command. For example, to replace "old_text" with "new_text", type :%s/old_text/new_text/g and press Enter.
+Remember, Vim's search capabilities are quite powerful, and you can use regular expressions and various modifiers for more advanced searching.
+
+Module 16
+Linux server - Operate running systems
+
+• Assignment Level Basic to Advance
+
+1. What is PID ?
+Ans:
+PID stands for "Process Identifier." It is a unique numerical identifier assigned to each running process in an operating system. The PID is used by the operating system to track and manage processes.
+
+When a program or application is executed, the operating system creates a process to run that program. This process is assigned a PID, which allows the operating system to keep track of various attributes and status of the process. These attributes include the parent process ID (PPID), memory usage, CPU time, state (running, sleeping, etc.), and more.
+
+PIDs are important for several reasons:
+
+Process Management: PIDs help the operating system manage and control processes efficiently. For instance, the OS can start, pause, resume, or terminate a process using its PID.
+
+Resource Allocation: PIDs assist in managing the allocation of system resources (e.g., CPU time, memory) to different processes, preventing conflicts and ensuring efficient usage.
+
+Error Handling: PIDs are useful for identifying processes in case of errors or issues within the system. Logs and error messages often include PIDs to help diagnose problems.
+
+Interprocess Communication (IPC): PIDs are used for communication between processes, enabling processes to interact with each other and share data.
+
+Each time a process is created, it is assigned a new, unique PID, which is typically a non-negative integer. PIDs are usually recycled once a system wraps around the maximum PID value, and old PIDs are reused for new processes. However, modern systems support large numbers of PIDs, reducing the likelihood of PID reuse during a system's uptime.
+
+2. What is PPID?
+Ans:PPID stands for "Parent Process Identifier." It is a unique numerical identifier assigned to the parent process of a particular running process in an operating system.
+
+Every process in an operating system is created by another process, known as the "parent" process. The parent process spawns or creates a new process, which becomes its child. The child process inherits various attributes and properties from its parent, including the parent process ID (PPID). The PPID is used to identify the process that created or spawned the current process.
+
+The PPID is essential for process management and control for several reasons:
+
+Process Hierarchy: Understanding the parent-child relationship allows for the creation of process hierarchies, where processes can spawn other processes, forming a tree-like structure.
+
+Parental Control: The parent process can manage and control its child processes, monitor their behavior, and even terminate them if necessary.
+
+Process Termination: If a parent process terminates, its child processes may be adopted by the system or reassigned to a new parent process.
+
+Resource Allocation: The parent process often determines the allocation of resources and permissions for its child processes.
+
+By examining the PPID, one can trace the ancestry of a process back to its origin, revealing the process that initiated its creation. This information is valuable for troubleshooting, understanding system behavior, and managing processes effectively.
+ 
+3. What is the use of “ ps “ command ?
+Ans:The ps command in Unix and Unix-like operating systems (including Linux) is used to provide information about the currently running processes. It is a powerful utility that allows users to monitor and manage processes on the system. The term "ps" stands for "process status."
+
+Here are some common uses and functionalities of the ps command:
+
+Display Process Information:
+
+The primary use of ps is to display information about the processes running on the system, including their process IDs (PIDs), CPU and memory usage, parent process IDs (PPIDs), status, and more.
+List All Processes:
+
+ps without any options lists the processes associated with the current terminal session.
+Display Detailed Process Information:
+
+Using various options (-f, -l, -e, etc.), you can get detailed information about processes, including the full command line, the user who started the process, start time, CPU and memory usage, and more.
+Show All Users' Processes:
+
+ps -e or ps aux displays all running processes on the system for all users.
+Show Parent-Child Relationships:
+
+ps -f displays the parent-child process relationships, showing the parent process ID (PPID) for each process.
+Sort and Customize Output:
+
+ps allows you to sort and customize the output to display the information in the desired format or order.
+Monitor Specific Processes:
+
+By using ps -p <PID>, you can monitor a specific process by providing its PID.
+Continuous Monitoring:
+
+The ps command can be used in combination with other tools (like watch) to continuously monitor processes and their statuses.
+Filter and Search for Processes:
+
+ps allows you to filter processes based on various criteria (user, command, etc.) using options like -U, -C, -G, etc.
+Overall, the ps command is a fundamental and versatile tool for system administrators and users to monitor and manage processes effectively on a Unix-based operating system.
+
+
+4. What is the use of “ps aux “ command ?
+Ans:The ps aux command is a widely used Unix/Linux command that provides a detailed listing of all processes currently running on the system. Here's a breakdown of the ps aux command and its uses:
+
+ps: This is the command itself, which stands for "process status." It is used to display information about active processes.
+
+aux: These are options passed to the ps command to customize the output:
+
+a: Lists processes of all users. By default, ps only shows processes associated with the current terminal.
+u: Displays a detailed output format that includes the user, CPU usage, memory usage, start time, and command line.
+x: Lists processes not associated with a terminal (daemons). This is useful for showing background processes.
+Putting it all together, ps aux displays a comprehensive list of all processes running on the system, providing extensive information about each process, including the user, CPU and memory usage, start time, and more.
+
+Usage and Examples:
+
+General Process Listing: ps aux lists all processes on the system, including those running in the background (daemons).
+Process Monitoring: Administrators often use ps aux to monitor processes and identify any abnormal CPU or memory usage.
+Finding Specific Process: You can combine ps aux with tools like grep to filter for specific processes. For example, ps aux | grep "process_name" will display processes containing "process_name" in their command line.
+Identifying Resource Usage: The ps aux output provides valuable information on CPU and memory usage, helping administrators identify resource-intensive processes that may need optimization or termination.
+Overall, ps aux is a powerful tool for understanding the system's current process status, making it an essential part of system monitoring, debugging, and management.
+5. What is the use of “ tops “ command ?
+
+6. Which command is used to change priority value ?
+Ans:The nice and renice commands are used to change the priority (niceness) of a process in Unix and Unix-like operating systems, including Linux. These commands allow you to adjust the scheduling priority of a process, influencing its CPU time allocation.
+
+Here's an overview of both commands:
+
+nice Command:
+
+The nice command is used to launch a new process with an adjusted scheduling priority (niceness).
+Lowering the niceness value gives the process a higher priority, making it use more CPU time.
+Raising the niceness value makes the process less of a priority, allowing other processes to get more CPU time.
+Usage:
+
+nice -n <value> <command>
+Example:
+
+nice -n -10 ./my_program   # Starts "my_program" with higher priority (lower niceness)
+renice Command:
+
+The renice command is used to change the priority (niceness) of an existing process.
+Similar to nice, lower niceness values give the process higher priority, while higher niceness values reduce its priority.
+Usage:
+
+renice [-n] <niceness_value> -p <PID>
+Example:
+
+renice -n -5 -p 12345   # Changes the niceness of the process with PID 12345 to -5
+You can also specify the process by name using pgrep:
+
+renice -n -10 $(pgrep my_process)   # Changes the niceness of the process named "my_process" to -10
+Both commands are useful for adjusting the priority of processes, especially in scenarios where you want to manage CPU time allocation and optimize system performance. The renice command is particularly valuable for adjusting the priority of existing processes. 
+
+7. What is the use of “jobs” command ?
+Ans:The jobs command is used in Unix-like operating systems, including Linux, to display the status of background and suspended jobs associated with the current shell session. A "job" typically refers to a process or a group of processes that have been initiated from the same shell session.
+
+Here's a summary of the uses of the jobs command:
+
+Displaying Running and Suspended Jobs:
+
+jobs displays a list of all background and suspended jobs initiated within the current shell session.
+It provides information such as job number, status, and command associated with each job.
+Monitoring Background Jobs:
+
+When a command or process is executed in the background (e.g., using & at the end of a command), it runs independently, allowing the user to continue entering other commands in the foreground.
+The jobs command helps monitor the progress and status of background jobs.
+Managing Background Jobs:
+
+The jobs command allows you to manage background jobs by providing job numbers that can be used with other commands like bg, fg, and kill to control the jobs.
+Bringing Jobs to the Foreground (fg):
+
+The fg command is used to bring a background job to the foreground and continue its execution in the foreground.
+Putting Jobs in the Background (bg):
+
+The bg command is used to put a stopped or suspended job in the background, allowing it to continue its execution without interfering with the current shell session.
+Signaling Jobs (kill):
+
+The kill command, used in combination with job numbers, allows you to send signals to jobs, enabling you to terminate, pause, or resume job execution.
+Overall, the jobs command is a crucial tool for managing and monitoring background and suspended jobs, enabling efficient multitasking and control over running processes in a Unix-like environment.
+
+ 
+8. What is the use of grep command ?
+Ans:The grep command is a powerful utility in Unix-like operating systems, including Linux, that is used for searching and pattern matching within files or command output. "grep" stands for "Global Regular Expression Print."
+
+Here are the key uses of the grep command:
+
+Searching for a Pattern in Files:
+
+grep allows you to search for a specified pattern (a regular expression or simple string) in one or more files. It prints lines that match the pattern.
+Displaying Matching Lines:
+
+By default, grep displays all lines in a file that contain the specified pattern.
+Using Regular Expressions:
+
+Regular expressions (regex) allow for more complex pattern matching. grep supports various regex patterns to search for specific types of text.
+Case-Insensitive Search:
+
+You can use the -i option with grep to perform a case-insensitive search.
+Showing Line Numbers:
+
+Use the -n option to display line numbers along with the matching lines.
+Displaying Inverse Matches:
+
+The -v option inverts the match, displaying lines that do not match the pattern.
+Displaying Count of Matches:
+
+The -c option counts the number of lines that match the pattern rather than displaying the lines themselves.
+Recursive Search:
+
+With the -r or -R option, grep can perform a recursive search through directories and subdirectories.
+Suppressing Error Messages:
+
+The -s option suppresses error messages, which is useful in combination with other commands or scripts.
+Usage Examples:
+
+Basic Search:
+
+grep "pattern" filename
+Case-Insensitive Search:
+
+grep -i "pattern" filename
+Display Line Numbers:
+
+grep -n "pattern" filename
+Invert Match:
+
+grep -v "pattern" filename
+Count Matches:
+
+grep -c "pattern" filename
+Recursive Search:
+
+grep -r "pattern" directory
+The grep command is a versatile tool for finding specific patterns or text within files and is commonly used in various scripts, commands, and pipelines to process and analyze data efficiently.
+
+9. What is system?
+Ans:A "system" generally refers to a collection of interconnected or interdependent components or parts that work together to perform a specific function or purpose. In computing and technology, the term "system" can refer to various entities:
+
+Computer System:
+
+In the context of computing, a computer system typically refers to a combination of hardware, software, and user input/output devices working together to execute tasks or processes.
+Operating System:
+
+The operating system (OS) is a critical software component of a computer system that manages hardware resources, provides user interfaces, and enables the execution of applications and processes.
+Software System:
+
+A software system comprises multiple software components, modules, or programs that work together to achieve specific objectives. These components can include applications, libraries, and frameworks.
+Information System:
+
+An information system refers to a combination of hardware, software, data, people, and procedures that are organized to collect, process, store, and distribute information in an organization to support decision-making and control.
+Ecosystem:
+
+In a broader sense, "system" can refer to a complex and interrelated set of elements within a specific environment, such as an ecological system, economic system, or social system.
+Each type of system has its own set of components, rules, interactions, and objectives. The study and understanding of systems are fundamental in various fields, including computer science, engineering, biology, sociology, economics, and more, to analyze and design efficient and effective solutions. 
+10.What is daemons?
+
+11.I want to check the service status for” sshd”, which will help me?
+Ans:To check the service status for "sshd" (SSH daemon) on a Linux system, you can use the systemctl command. systemctl is a powerful command-line utility used to control the systemd system and service manager.
+
+Here's how you can check the status of the SSH daemon service:
+
+Using systemctl status:
+
+systemctl status sshd
+This command will provide detailed information about the status of the SSH daemon service, including whether it's running, any errors, and other relevant details.
+
+Using service (an alternative method, especially on older systems):
+
+service sshd status
+On older systems or systems not using systemd, you can use the service command to check the status of the SSH daemon service.
+
+These commands will give you information about whether the SSH daemon service is active (running) or inactive (stopped), and other details like the process ID, memory usage, and more.
+
+Make sure to run these commands with appropriate privileges (e.g., using sudo) if needed, especially if you're not logged in as the system administrator or a user with administrative privileges 
+
+12.How to stop and start services in terminal?
+Ans:To stop and start services in a terminal on a Linux system, you can use the systemctl command. The systemctl command is used to control services and the systemd system and service manager. Here's how you can stop and start services:
+
+Stopping a Service:
+
+sudo systemctl stop service_name
+Replace service_name with the actual name of the service you want to stop. This command will stop the specified service.
+
+Starting a Service:
+
+sudo systemctl start service_name
+Replace service_name with the actual name of the service you want to start. This command will start the specified service.
+
+Restarting a Service:
+
+sudo systemctl restart service_name
+Replace service_name with the actual name of the service you want to restart. This command will stop and then start the specified service.
+
+Reloading a Service (Reloads Configuration):
+
+sudo systemctl reload service_name
+Replace service_name with the actual name of the service you want to reload. This command will reload the configuration of the specified service.
+
+Enabling a Service (Starts on Boot):
+
+sudo systemctl enable service_name
+Replace service_name with the actual name of the service you want to enable. This command will configure the specified service to start automatically at boot.
+
+Disabling a Service (Stops Starting on Boot):
+
+sudo systemctl disable service_name
+Replace service_name with the actual name of the service you want to disable. This command will prevent the specified service from starting automatically at boot.
+
+Make sure to replace service_name with the actual service name you want to manipulate (e.g., sshd for the SSH daemon). Additionally, use sudo to run the commands with superuser privileges, as managing services typically requires administrative access.
+ 
+13.What is the use of openSSH ?
+Ans:OpenSSH, which stands for Open Secure Shell, is a suite of network communication protocols and tools primarily used for secure remote access to systems over a network. It provides a secure way to log into and control a remote machine, as well as to transfer files securely between systems. OpenSSH is widely used and is considered the standard for secure remote access on Unix and Unix-like operating systems, including Linux.
+
+Here are some key uses of OpenSSH:
+
+Remote Shell (SSH):
+
+OpenSSH allows users to securely access and manage remote machines over a network using the SSH protocol (SSH-2 by default). Users can log in to a remote server and execute commands just as if they were physically present at the machine.
+Secure File Transfer (SFTP):
+
+OpenSSH provides the SFTP (Secure File Transfer Protocol) subsystem, which enables secure file transfers between systems over an encrypted connection. SFTP is commonly used for uploading, downloading, and managing files on remote servers securely.
+Secure Copy (SCP):
+
+SCP is a command-line tool provided by OpenSSH that allows for secure copying of files between a local and a remote machine or between two remote machines. It encrypts the data during transfer, providing a secure way to copy files.
+Tunneling and Port Forwarding:
+
+OpenSSH can set up encrypted tunnels between machines, allowing secure transmission of data between them. This is useful for securely accessing services (e.g., web servers) on a remote machine that might not be directly accessible from the user's local machine due to network restrictions.
+Public Key Authentication:
+
+OpenSSH supports public key-based authentication, which is more secure than traditional password-based authentication. Users can generate key pairs (public and private keys) and securely authenticate themselves using these keys, eliminating the need for passwords.
+Remote Command Execution:
+
+OpenSSH allows users to execute commands remotely on a machine using the ssh command. This is useful for automating tasks, scripts, and system administration tasks on remote systems.
+Secure Connection for X11:
+
+OpenSSH can securely forward X11 sessions, allowing users to run graphical applications on a remote server and display them locally.
+OpenSSH is a fundamental tool for system administrators, developers, and anyone needing secure remote access and file transfers. It's a critical component in securing network communication and is widely adopted due to its robust security features and versatility.
+ 
+14.Which command is used to generate key in linux ?
+Ans:To generate a cryptographic key pair (public and private keys) in Linux, you can use the ssh-keygen command. This command is used to create SSH keys for secure authentication, primarily using RSA or DSA algorithms. Here's a basic usage and example:
+
+Basic Usage:
+
+ssh-keygen -t <key_type> -b <key_length> -C "your_comment"
+<key_type>: The type of key to create, typically rsa (for RSA algorithm) or dsa (for DSA algorithm).
+<key_length>: The length of the key in bits, usually 2048 for RSA keys.
+"your_comment": An optional comment to describe the key (e.g., your email or a meaningful identifier).
+Example (RSA key with 2048 bits):
+
+
+ssh-keygen -t rsa -b 2048 -C "your_email@example.com"
+This will generate a new RSA key pair (public and private keys) with a length of 2048 bits and the specified comment.
+
+Generating DSA Key:
+
+ssh-keygen -t dsa -b 1024 -C "your_comment"
+Replace dsa with rsa or ecdsa for other key types.
+
+Custom Key Location:
+By default, ssh-keygen will store the generated keys in ~/.ssh/. You can specify a custom path using the -f option:
+
+ssh-keygen -t rsa -b 2048 -C "your_email@example.com" -f /path/to/custom_key
+This will generate the keys with the custom path and file name.
+
+The ssh-keygen command will prompt you for a passphrase to enhance the security of the key. The passphrase acts as an additional layer of protection, making it more secure but also requiring it each time you use the key.
+
+After running ssh-keygen, you'll have a new SSH key pair (public and private keys) generated and stored in the specified location, ready to be used for secure authentication.
+
+15.Which commannd is used to copy ssh key?
+AnS: To copy an SSH public key from your local machine to a remote server, you can use the ssh-copy-id command. This command securely installs your public key in the ~/.ssh/authorized_keys file on the remote server, allowing you to authenticate to the remote server using your private key.
+
+Here's the basic usage of ssh-copy-id:
+
+ssh-copy-id user@remote_server
+Replace user with the username you want to use to log in to the remote server, and replace remote_server with the IP address or hostname of the remote server.
+
+The ssh-copy-id command will prompt you for the password of the user on the remote server. Once you provide the password, it will copy your public key to the appropriate location on the remote server and set the correct permissions.
+
+Example:
+
+ssh-copy-id john@example.com
+This will copy the SSH public key of the current user to the user john on the remote server example.com.
+
+Make sure you have generated your SSH key pair (public and private keys) using ssh-keygen before using ssh-copy-id. The ssh-keygen command generates the keys, and ssh-copy-id copies the public key to the remote server for authentication.
+16.How do we prohibit the root user from logging in using ssh?
+Ans: 
+17.How do we prohibit password authentication using ssh?
+Ans:To prohibit password authentication and enforce the use of SSH key-based authentication in SSH, you need to modify the SSH daemon configuration file (sshd_config) on the remote server. Here are the steps to achieve this:
+
+Open the sshd_config file for editing:
+
+sudo nano /etc/ssh/sshd_config
+Replace nano with your preferred text editor if you have one.
+
+Find the Password Authentication setting:
+Look for the line that begins with PasswordAuthentication. It will usually be set to yes.
+
+Change Password Authentication setting:
+Change PasswordAuthentication to no to disable password authentication.
+
+PasswordAuthentication no
+Save and close the file:
+
+In nano, press Ctrl + O to save the file, then Ctrl + X to exit.
+Restart SSH service:
+Restart the SSH service for the changes to take effect.
+
+sudo systemctl restart sshd
+Now, SSH will only allow key-based authentication, and password authentication will be disabled.
+
+Please ensure that you have already set up SSH key-based authentication and tested it successfully before disabling password authentication to avoid being locked out of the server. Also, it's important to keep your private keys secure and back them up in a safe location.
+
+18.Where we find general logs ?
+Ans:In Linux-based systems, general system logs are typically stored in the /var/log directory. This is where various log files are located, each serving a specific purpose and containing information related to system operations, processes, applications, errors, and more.
+
+Here are some common log files found in the /var/log directory:
+
+auth.log or secure:
+
+Contains authentication-related messages, including login attempts, su (switch user) activity, and more.
+Location: /var/log/auth.log or /var/log/secure (location can vary based on the distribution).
+syslog:
+
+General system messages and logging from various system components.
+Location: /var/log/syslog.
+kern.log:
+
+Kernel-related messages, including hardware-related events and errors.
+Location: /var/log/kern.log.
+messages:
+
+General system messages, often containing information from daemons and services.
+Location: /var/log/messages.
+dmesg:
+
+Kernel ring buffer, providing detailed information about the system's hardware and drivers.
+Can be viewed using the dmesg command.
+auth.log (older Debian-based systems) or secure (older Red Hat-based systems):
+
+Deprecated, but still found in some older systems, similar to the current auth.log and secure.
+cron:
+
+Contains logs for cron jobs (scheduled tasks).
+Location: /var/log/cron.
+mail.log:
+
+Logs related to email servers and mail delivery.
+Location: /var/log/mail.log.
+boot.log:
+
+Logs related to the system boot process.
+Location: /var/log/boot.log.
+These logs can be viewed using various commands like cat, tail, less, or grep in the terminal. For example:
+
+cat /var/log/syslog
+tail -f /var/log/auth.log
+less /var/log/messages
+Additionally, some applications and services may have their own specific log files stored in the /var/log directory or subdirectories. It's important to check the documentation of the specific application or service for details on where their logs are located.
+
+19.Where we find secure logs ?
+Ans:The "secure" log file, which typically contains authentication-related messages such as login attempts and authentication failures, is often found on systems that use the systemd logging system. However, the specific location of the "secure" log file can vary based on the Linux distribution. Here are some common locations for the "secure" log file:
+
+Ubuntu, Debian, and related distributions:
+
+Location: /var/log/auth.log
+CentOS, Fedora, Red Hat, and related distributions:
+
+Location: /var/log/secure
+To view the contents of the "secure" log file, you can use the cat, tail, less, or grep command in the terminal. For example:
+
+cat /var/log/auth.log    # For Ubuntu, Debian, and related distributions
+tail -f /var/log/secure  # For CentOS, Fedora, Red Hat, and related distributions
+less /var/log/auth.log   # To view the log contents using less
+Replace the path with the appropriate path for your specific distribution. If you're unsure of the location, you can use the ls command to list the contents of the /var/log directory and look for files related to authentication and security.
+
+20.Where we find mail log ?
+Ans:The mail log, which contains logs related to email servers and mail delivery, is often located in the /var/log directory on Unix-like systems. The specific name of the mail log file and its location can vary based on the mail server software being used and the Linux distribution. Here are some common locations for the mail log file:
+
+Postfix (a popular mail server):
+
+Location: /var/log/mail.log (or /var/log/maillog on some systems)
+Sendmail:
+
+Location: /var/log/maillog
+Exim:
+
+Location: /var/log/exim4/mainlog (on Debian-based systems, like Ubuntu)
+Location: /var/log/exim/mainlog (on Red Hat-based systems, like CentOS)
+Dovecot (a popular IMAP and POP3 server):
+
+Location: /var/log/mail.log (or /var/log/maillog on some systems)
+To view the contents of the mail log file, you can use the cat, tail, less, or grep command in the terminal. For example:
+
+cat /var/log/mail.log    # For Postfix or Dovecot
+tail -f /var/log/maillog  # For Sendmail
+less /var/log/exim4/mainlog  # For Exim (on Debian-based systems)
+Replace the path with the appropriate path for your specific mail server software and Linux distribution. If you're unsure of the location, you can use the ls command to list the contents of the /var/log directory and look for files related to mail or mail server software.
+
+21.Where we find scheduling logs?
+Ans:Scheduling logs, typically related to cron jobs (scheduled tasks) and at jobs, are usually stored in specific log files in the /var/log directory or its subdirectories on Unix-like systems. The specific log files can vary based on the system and the scheduling mechanisms being used.
+
+Here are common log files related to scheduling:
+
+Cron Jobs:
+
+Ubuntu, Debian, and related distributions:
+Location: /var/log/syslog
+CentOS, Fedora, Red Hat, and related distributions:
+Location: /var/log/cron
+At Jobs:
+
+Ubuntu, Debian, and related distributions:
+Location: /var/log/syslog
+CentOS, Fedora, Red Hat, and related distributions:
+Location: /var/log/secure
+To view the contents of the scheduling log file, you can use the cat, tail, less, or grep command in the terminal. For example:
+
+cat /var/log/syslog   # For scheduling logs on Ubuntu, Debian, and related distributions
+tail -f /var/log/cron  # For cron logs on CentOS, Fedora, Red Hat, and related distributions
+less /var/log/syslog   # To view the log contents using less
+Replace the path with the appropriate path for your specific Linux distribution and scheduling mechanism. If you're unsure of the location, you can use the ls command to list the contents of the /var/log directory and look for files related to scheduling or cron jobs
+22.Where we find booting logs?
+Ans:Booting logs, which contain information about the system boot process and events related to system startup, are often stored in specific log files in the /var/log directory or its subdirectories on Unix-like systems. These logs can provide valuable information for troubleshooting boot issues and understanding the system's startup sequence.
+
+The common log file related to the boot process is:
+
+Boot Logs:
+Ubuntu, Debian, and related distributions:
+Location: /var/log/boot.log
+CentOS, Fedora, Red Hat, and related distributions:
+Location: /var/log/boot.log
+To view the contents of the boot log file, you can use the cat, tail, less, or grep command in the terminal. For example:
+
+cat /var/log/boot.log   # For boot logs on Ubuntu, Debian, and related distributions
+less /var/log/boot.log  # To view the log contents using less
+Replace the path with the appropriate path for your specific Linux distribution. If you're unsure of the location, you can use the ls command to list the contents of the /var/log directory and look for files related to the boot process or startup. Additionally, some distributions may use dmesg to display kernel ring buffer messages, which often include boot-related information. Use dmesg for viewing kernel logs related to the boot process:
+
+dmesg | less
+
+23.What is the use of “lastb” command ?
+Ans:The lastb command is used to display a list of failed login attempts recorded in the system's wtmp or btmp files. It stands for "last bad login."
+
+Key uses and features of the lastb command include:
+
+Display Failed Login Attempts:
+
+The primary purpose of lastb is to show a list of failed login attempts on the system.
+Show Source IP and User:
+
+It displays the source IP address or hostname and the username associated with each failed login attempt.
+Display Time and Date:
+
+lastb provides information about the time and date of each failed login attempt.
+Access Security Information:
+
+It's a valuable tool for system administrators to monitor and analyze potential security breaches or unauthorized login attempts.
+Useful for Security Auditing:
+
+The information displayed by lastb can be helpful for security auditing, allowing administrators to detect and respond to suspicious login activities.
+Usage:
+
+lastb
+By default, lastb reads data from the /var/log/btmp file, which logs failed login attempts. The information displayed includes the user attempting to log in, the source IP address, and the date and time of the attempt.
+
+It's important to note that lastb requires superuser privileges to access the /var/log/btmp file and read the login failure records. Typically, you would run this command with sudo or as the root user.
+
+For successful login history, you can use the last command without the b option (last instead of lastb).
+
+24.Where we find general logs ?
+Ans:General system logs, which include a wide range of system and application-related messages, are typically stored in various log files across the system. On Unix-like systems such as Linux, these logs are often found in the /var/log directory or its subdirectories. Here are some common log files that contain general system logs:
+
+syslog:
+
+Contains general system messages and logging from various system components.
+Location: /var/log/syslog.
+messages:
+
+Contains general system messages, often including logs from daemons and services.
+Location: /var/log/messages.
+kern.log:
+
+Contains kernel-related messages, including hardware-related events and errors.
+Location: /var/log/kern.log.
+auth.log or secure:
+
+Contains authentication-related messages, including login attempts, su (switch user) activity, and more.
+Ubuntu, Debian, and related distributions: /var/log/auth.log.
+CentOS, Fedora, Red Hat, and related distributions: /var/log/secure.
+auth.log (older Debian-based systems) or secure (older Red Hat-based systems):
+
+Deprecated, but still found in some older systems, similar to the current auth.log and secure.
+boot.log:
+
+Contains logs related to the system boot process.
+Location: /var/log/boot.log.
+debug:
+
+Contains debug messages from various applications and components.
+Location: /var/log/debug.
+To view the contents of these log files, you can use commands such as cat, tail, less, or grep. For example:
+
+cat /var/log/syslog    # View syslog contents
+tail -f /var/log/messages  # View messages in real-time
+less /var/log/kern.log  # View kernel logs using less
+Each log file provides specific information about the system's activities, errors, and events, which can be invaluable for troubleshooting, monitoring, and maintaining the system. The appropriate log file to consult will depend on the type of information you are seeking.
+ 
+25.Where we find secure logs ?
+Ans:The "secure" log file, which typically contains authentication-related messages such as login attempts and authentication failures, is often found on systems that use the systemd logging system. However, the specific location of the "secure" log file can vary based on the Linux distribution. Here are some common locations for the "secure" log file:
+
+Ubuntu, Debian, and related distributions:
+
+Location: /var/log/auth.log
+CentOS, Fedora, Red Hat, and related distributions:
+
+Location: /var/log/secure
+To view the contents of the "secure" log file, you can use the cat, tail, less, or grep command in the terminal. For example:
+
+cat /var/log/auth.log    # For Ubuntu, Debian, and related distributions
+tail -f /var/log/secure  # For CentOS, Fedora, Red Hat, and related distributions
+less /var/log/auth.log   # To view the log contents using less
+Replace the path with the appropriate path for your specific distribution. If you're unsure of the location, you can use the ls command to list the contents of the /var/log directory and look for files related to authentication and security.
+
+26.Where we find mail log ?
+Ans:The mail log, which contains logs related to email servers and mail delivery, is often located in the /var/log directory on Unix-like systems. The specific name of the mail log file and its location can vary based on the mail server software being used and the Linux distribution. Here are some common locations for the mail log file:
+
+Postfix (a popular mail server):
+
+Location: /var/log/mail.log (or /var/log/maillog on some systems)
+Sendmail:
+
+Location: /var/log/maillog
+Exim:
+
+Location: /var/log/exim4/mainlog (on Debian-based systems, like Ubuntu)
+Location: /var/log/exim/mainlog (on Red Hat-based systems, like CentOS)
+Dovecot (a popular IMAP and POP3 server):
+
+Location: /var/log/mail.log (or /var/log/maillog on some systems)
+To view the contents of the mail log file, you can use the cat, tail, less, or grep command in the terminal. For example:
+
+cat /var/log/mail.log    # For Postfix or Dovecot
+tail -f /var/log/maillog  # For Sendmail
+less /var/log/exim4/mainlog  # For Exim (on Debian-based systems)
+Replace the path with the appropriate path for your specific mail server software and Linux distribution. If you're unsure of the location, you can use the ls command to list the contents of the /var/log directory and look for files related to mail or mail server software.
+
+27.Where we find scheduling logs?
+Ans:Scheduling logs, typically related to cron jobs (scheduled tasks) and at jobs, are usually stored in specific log files in the /var/log directory or its subdirectories on Unix-like systems. The specific log files can vary based on the system and the scheduling mechanisms being used.
+
+Here are common log files related to scheduling:
+
+Cron Jobs:
+
+Ubuntu, Debian, and related distributions:
+Location: /var/log/syslog
+CentOS, Fedora, Red Hat, and related distributions:
+Location: /var/log/cron
+At Jobs:
+
+Ubuntu, Debian, and related distributions:
+Location: /var/log/syslog
+CentOS, Fedora, Red Hat, and related distributions:
+Location: /var/log/secure
+To view the contents of the scheduling log file, you can use the cat, tail, less, or grep command in the terminal. For example:
+
+
+cat /var/log/syslog   # For scheduling logs on Ubuntu, Debian, and related distributions
+tail -f /var/log/cron  # For cron logs on CentOS, Fedora, Red Hat, and related distributions
+less /var/log/syslog   # To view the log contents using less
+Replace the path with the appropriate path for your specific Linux distribution and scheduling mechanism. If you're unsure of the location, you can use the ls command to list the contents of the /var/log directory and look for files related to scheduling or cron jobs.
+
+28.Where we find booting logs?
+Ans:Booting logs, which contain information about the system boot process and events related to system startup, are often stored in specific log files in the /var/log directory or its subdirectories on Unix-like systems. These logs can provide valuable information for troubleshooting boot issues and understanding the system's startup sequence.
+
+The common log file related to the boot process is:
+
+Boot Logs:
+Ubuntu, Debian, and related distributions:
+Location: /var/log/boot.log
+CentOS, Fedora, Red Hat, and related distributions:
+Location: /var/log/boot.log
+To view the contents of the boot log file, you can use the cat, tail, less, or grep command in the terminal. For example:
+
+
+cat /var/log/boot.log   # For boot logs on Ubuntu, Debian, and related distributions
+less /var/log/boot.log  # To view the log contents using less
+Replace the path with the appropriate path for your specific Linux distribution. If you're unsure of the location, you can use the ls command to list the contents of the /var/log directory and look for files related to the boot process or startup. Additionally, some distributions may use dmesg to display kernel ring buffer messages, which often include boot-related information. Use dmesg for viewing kernel logs related to the boot process:
+
+
+dmesg | less
+
+29.What is the use of “lastb” command ?
+Ans:The lastb command is used to display a list of failed login attempts recorded in the system's wtmp or btmp files. It stands for "last bad login."
+
+Key uses and features of the lastb command include:
+
+Display Failed Login Attempts:
+
+The primary purpose of lastb is to show a list of failed login attempts on the system.
+Show Source IP and User:
+
+It displays the source IP address or hostname and the username associated with each failed login attempt.
+Display Time and Date:
+
+lastb provides information about the time and date of each failed login attempt.
+Access Security Information:
+
+It's a valuable tool for system administrators to monitor and analyze potential security breaches or unauthorized login attempts.
+Useful for Security Auditing:
+
+The information displayed by lastb can be helpful for security auditing, allowing administrators to detect and respond to suspicious login activities.
+Usage:
+
+bash
+Copy code
+lastb
+By default, lastb reads data from the /var/log/btmp file, which logs failed login attempts. The information displayed includes the user attempting to log in, the source IP address, and the date and time of the attempt.
+
+It's important to note that lastb requires superuser privileges to access the /var/log/btmp file and read the login failure records. Typically, you would run this command with sudo or as the root user.
+
+For successful login history, you can use the last command without the b option (last instead of lastb).
+
+ 
+• Assignment Level Intermediate
+
+1. Remote host is “NADIAD”, Remote user is “KAMAL,
+how to access remote user via ssh? [ wright down the command]
+Ans:To access a remote host named "NADIAD" with the user "kamal" via SSH, you would typically use the following command:
+
+ssh kamal@NADIAD
+Replace "NADIAD" with the actual hostname or IP address of the remote host.
+
+If you need to specify a custom SSH port (other than the default port 22), you can do so using the -p option followed by the port number. For example, if the SSH port is 2222:
+
+ssh -p 2222 kamal@NADIAD
+This command will attempt to establish an SSH connection to the remote host "NADIAD" with the username "kamal". It will prompt for the user's password unless SSH key-based authentication is configured for the user "kamal" on the remote host.
+
+2. What is the use of “w -f “command ?
+Ans:The w command in Unix-like operating systems is used to display information about currently logged-in users and what they are doing. The -f option for the w command provides additional details related to the user's FROM address and login time.
+
+Here's the specific use of w -f:
+
+Display Detailed User Information:
+
+The w command alone displays general information about logged-in users, including their username, terminal, remote host (FROM address), login time, idle time, and current activity.
+With -f Option:
+
+When you add the -f option (w -f), it enhances the output by providing additional details such as the FROM address (the remote host or terminal from which the user is logged in) and the login time.
+Usage:
+
+bash
+Copy code
+w -f
+Output example:
+
+l
+ 15:40:50 up 10 days,  5:20,  3 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+user1    tty1     :0               15:38    10:00   0.05s  0.05s bash
+user2    pts/0    :0               14:40     0.00s  0.03s  0.01s w -f
+user3    pts/1    192.168.1.10     13:20     2:19   0.02s  0.02s -bash
+In this example, the w -f command provides details about logged-in users, including the FROM address (remote host or terminal) and the time of login.
+
+USER: Username of the logged-in user.
+TTY: Terminal or device the user is connected to.
+FROM: Remote host or address from which the user is connected.
+LOGIN@: Time of login.
+IDLE: Idle time since the last activity.
+JCPU: Total CPU time used by all processes attached to the tty.
+PCPU: CPU time used by the current process (the w -f command in this case).
+WHAT: Current activity or command being executed by the user.
+Using w -f provides a more detailed view of the logged-in users and their activities.
+
+
+
+
+
+3. What is “SSHS host keys “?
+Ans:It seems like there might be a typo or misunderstanding in your question. "SSHS" is not a standard acronym or term related to SSH (Secure Shell). However, I'll provide information about SSH host keys in the context of SSH (Secure Shell).
+
+In SSH, host keys are used for secure communication and verification of the authenticity of the SSH server. When you connect to a remote SSH server, your SSH client verifies the server's identity using its host key. The host key is essentially a cryptographic fingerprint unique to that server.
+
+There are three main types of SSH host keys:
+
+RSA (Rivest-Shamir-Adleman): An older and widely used type of SSH host key based on the RSA algorithm.
+
+DSA (Digital Signature Algorithm): Another older type of SSH host key, not as commonly used today due to potential security concerns.
+
+ECDSA (Elliptic Curve Digital Signature Algorithm): A modern and widely used SSH host key type that offers strong security with smaller key sizes compared to RSA and DSA.
+
+Ed25519: A modern and highly secure SSH host key type based on the EdDSA (Edwards-curve Digital Signature Algorithm).
+
+When you connect to a new SSH server, your SSH client checks if the server's host key is already stored in your known_hosts file (usually located in ~/.ssh/known_hosts). If not, it will prompt you to accept the new host key. Once you accept, the host key is stored, and future connections to that server will use this key for verification.
+
+The host key is essential for establishing a secure and encrypted communication channel between your client and the SSH server, ensuring that the server you are connecting to is the correct and trusted one. If the host key changes unexpectedly (e.g., due to a potential security issue), your SSH client will alert you about the change to prevent potential man-in-the-middle attacks.
+
+4. What is the default location for server’s public key in client side?
+Ans:The default location for storing a server's public key on the client side is typically within the ~/.ssh/known_hosts file, where ~ represents the user's home directory.
+
+The known_hosts file is a text file that stores the public keys of hosts (servers) you have connected to and accepted the host keys for. This file is used by the SSH client to verify the authenticity of the server when connecting.
+
+Each line in the known_hosts file typically contains the following information:
+
+hostname ssh-algorithm public-key
+hostname: The hostname or IP address of the SSH server.
+ssh-algorithm: The encryption algorithm used by the SSH server.
+public-key: The server's public key for the specified algorithm.
+For example:
+
+example.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC...
+If the known_hosts file doesn't exist, SSH will create it the first time you connect to a remote SSH server and accept its public key.
+
+Keep in mind that if the server's host key changes (for instance, due to a reinstallation of the server), SSH will display a warning about a possible man-in-the-middle attack. In this case, it's important to verify the server's identity and, if appropriate, update the known_hosts file with the new host key.
+
+
+5. I want to fire “ls -l /etc” command on remote host “desktop”
+[ wright down the command ]
+Ans:To execute the ls -l /etc command on a remote host named "desktop" using SSH, you can use the ssh command. Here's the command:
+
+ssh username@desktop "ls -l /etc"
+Replace "username" with your actual username on the remote host, and replace "desktop" with the actual hostname or IP address of the remote host.
+
+This command will SSH into the "desktop" host, execute the ls -l /etc command, and display the detailed listing of files in the /etc directory.
+
+6. What is the use of this command “ #journalctl --since today “
+Ans:The journalctl --since today command is used to display system journal entries (logs) since the beginning of the current day. This command is particularly useful for viewing system logs recorded on the same day when troubleshooting or monitoring system activities.
+
+Here's what each part of the command does:
+
+journalctl: This command is used to query and display logs from the systemd journal, a centralized logging system used by modern Linux distributions.
+
+--since today: This option filters and displays logs recorded since the beginning of the current day, allowing you to focus on recent events and activities.
+
+Usage:
+
+journalctl --since today
+Output example:
+
+-- Logs begin at Wed 2021-10-06 09:45:23 UTC, end at Wed 2021-10-06 14:30:01 UTC. --
+Oct 06 09:45:23 mymachine systemd[1]: Starting The Apache HTTP Server...
+Oct 06 09:45:23 mymachine apachectl[12345]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1. Set the 'ServerName' directive globally to suppress this message
+Oct 06 09:45:23 mymachine systemd[1]: Started The Apache HTTP Server.
+...
+In this example, the journalctl --since today command displays logs that start from the beginning of the current day until the present time. It provides details about various system events, services, and processes recorded in the system journal for the specified time frame.
+
+
+7. What is “ chronyd “?
+Ans:The term "chroynd" does not appear to be a standard or recognized term in the context of computer science, software, or common technical terminology up to my knowledge cutoff date in September 2021. It's possible that it's a typo, a misspelling, or a specific term related to a particular field or domain that is not widely recognized or documented.
+
+If you have additional context or details about where you encountered this term or how it's being used, please provide more information so I can attempt to assist you further.
+
+8. Full form of NTP
+Ans:NTP stands for Network Time Protocol. NTP is a networking protocol used for clock synchronization between computer systems over packet-switched, variable-latency data networks. It's essential for maintaining accurate and synchronized time across devices and systems in a network, ensuring consistent time for applications, security, and other processes that rely on precise timing. NTP helps in managing time and coordinating time-based activities in a networked environment.
+
+9. Port number for NTP is…
+Ans:The default port number for NTP (Network Time Protocol) is 123, both for UDP (User Datagram Protocol) and TCP (Transmission Control Protocol) transport. NTP primarily uses UDP for time synchronization.
+
+When configuring NTP servers or clients, port 123 is the standard port used for communication between them. It's important to ensure that this port is open and accessible for NTP traffic to flow between servers and clients, allowing for accurate time synchronization across the network.
+
+10.I want to check timzone, which command will help me ?
+Ans:To check the timezone on a Linux system, you can use the timedatectl command, which is a command-line utility for configuring the system clock, time, and date settings, including the timezone.
+
+Here's how you can use timedatectl to check the timezone:
+
+timedatectl
+The output will display detailed information about the current system time, date, and timezone, including the timezone name, if set.
+
+Example output:
+
+
+               Local time: Fri 2023-10-06 16:45:23 UTC
+           Universal time: Fri 2023-10-06 16:45:23 UTC
+                 RTC time: Fri 2023-10-06 16:45:24
+                Time zone: UTC (UTC, +0000)
+In this example, the timezone is set to UTC.
+
+If you're interested in listing all available timezones, you can use the timedatectl command with the list-timezones option:
+
+
+timedatectl list-timezones
+This command will display a long list of available timezones that you can set on your system.
+
+11.How to set timezone? Give a comman….
+Ans:To check the timezone on a Linux system, you can use the timedatectl command, which is a command-line utility for configuring the system clock, time, and date settings, including the timezone.
+
+Here's how you can use timedatectl to check the timezone:
+
+timedatectl
+The output will display detailed information about the current system time, date, and timezone, including the timezone name, if set.
+
+Example output:
+
+               Local time: Fri 2023-10-06 16:45:23 UTC
+           Universal time: Fri 2023-10-06 16:45:23 UTC
+                 RTC time: Fri 2023-10-06 16:45:24
+                Time zone: UTC (UTC, +0000)
+In this example, the timezone is set to UTC.
+
+If you're interested in listing all available timezones, you can use the timedatectl command with the list-timezones option:
+
+timedatectl list-timezones
+This command will display a long list of available timezones that you can set on your system.
+
+User
+how to set timezone? give a comman..
+
+ChatGPT
+To set the timezone on a Linux system using the timedatectl command, you can use the following command:
+
+sudo timedatectl set-timezone Your_Timezone
+Replace Your_Timezone with the specific timezone you want to set. For example, to set the timezone to "America/New_York":
+
+sudo timedatectl set-timezone America/New_York
+Make sure to use the correct timezone name from the list of available timezones. You can get a list of available timezones using the timedatectl list-timezones command.
+
+
+• Task :1
+
+1. Display all processes on display
+Ans:To display all processes on a Linux system, you can use the ps command. To list all processes currently running in a terminal, you can use the following command:
+
+ps -ef
+This will display a list of all processes along with detailed information about each process, including the process ID (PID), the user running the process, the command that started the process, and more.
+
+If you want a more user-friendly display with a tree-like structure showing the relationships between processes, you can use the pstree command:
+
+pstree
+This will display a process tree, illustrating the parent-child relationships between processes.
+
+Keep in mind that the exact options and behavior of the ps and pstree commands may vary slightly depending on your Linux distribution and system configuration.
+
+2. In terminal, Determine the number of logical CPUs
+Ans:To determine the number of logical CPUs (threads) on a Linux system using the terminal, you can use the nproc command. Here's how:
+
+nproc
+The nproc command will output the number of processing units available to the current process, which is typically the number of logical CPUs or threads on the system.
+
+If you want to also display the number of physical CPUs (cores), you can use the lscpu command:
+
+lscpu
+This command will provide detailed information about the CPU, including the number of sockets, cores, threads, and other relevant information.
+
+The number of logical CPUs is often what people refer to as the "number of CPUs" in a system, especially in multi-core/multi-threaded environments.
+
+3. Start and check any new job
+Ans:To start a new job in a Linux terminal, you typically run a command or a script in the background. You can use the & operator to run a command in the background. For example:
+
+your_command &
+Replace your_command with the command or script you want to run in the background.
+
+To check the status of the background job, you can use the jobs command:
+
+jobs
+This will display a list of all the jobs running in the current shell session, along with their job numbers.
+
+If you want to bring a background job to the foreground, you can use the fg command followed by the job number. For example, if the job number is 1:
+
+
+fg %1
+This will bring job number 1 to the foreground.
+
+If you want to send a job to the background or resume a suspended job, you can use the bg command followed by the job number:
+
+bg %1
+Replace 1 with the appropriate job number.
+
+Keep in mind that if you start a new terminal session or close the current one, the background jobs running in that session will be terminated. If you want a job to persist even after you close the terminal, consider using tools like nohup or tmux.
+
+4. Start any new job in background
+Ans:To start a new job in the background, let's use a simple example of running the sleep command for 60 seconds. Here's how you can start this job in the background:
+
+bash
+Copy code
+sleep 60 &
+In this example, sleep 60 will make the terminal "sleep" (do nothing) for 60 seconds. The & operator at the end runs this command in the background.
+
+You can replace sleep 60 with any other command or script you want to run in the background.
+
+To check the status of the background job, you can use the jobs command:
+
+
+jobs
+This will display the job number and its status.
+
+If you want to bring a background job to the foreground, you can use the fg command followed by the job number. For example:
+
+fg %1
+Replace 1 with the appropriate job number.
+
+To send a job to the background or resume a suspended job, you can use the bg command followed by the job number:
+
+bg %1
+Replace 1 with the appropriate job number.
+
+Remember, you can replace sleep 60 with any other command or script you want to run in the background.
+
+5. Start any background job on foreground
+Ans:To start a new background job and then bring it to the foreground, you'll first start a job in the background using the & operator and then use the fg command to bring it to the foreground. Let's use the sleep command as an example:
+
+Start a background job using sleep:
+
+sleep 30 &
+This will make the sleep command run in the background for 30 seconds.
+
+Use jobs to see the job number. It will be something like [1] for the first job:
+
+jobs
+Bring the background job to the foreground using its job number (replace [1] with the appropriate job number):
+
+fg %1
+The sleep command will now be in the foreground.
+
+You can replace sleep 30 with any other command or script you want to run in the background and then bring to the foreground.
+
+6. Check running process
+Ans:To start a new background job and then bring it to the foreground, you'll first start a job in the background using the & operator and then use the fg command to bring it to the foreground. Let's use the sleep command as an example:
+
+Start a background job using sleep:
+
+bash
+Copy code
+sleep 30 &
+This will make the sleep command run in the background for 30 seconds.
+
+Use jobs to see the job number. It will be something like [1] for the first job:
+
+bash
+Copy code
+jobs
+Bring the background job to the foreground using its job number (replace [1] with the appropriate job number):
+
+bash
+Copy code
+fg %1
+The sleep command will now be in the foreground.
+
+You can replace sleep 30 with any other command or script you want to run in the background and then bring to the foreground.
+
+User
+check running process
+
+ChatGPT
+To check the currently running processes on a Linux system, you can use the ps command. Here are several variations of the ps command that you can use to display information about running processes:
+
+Display a List of User's Processes:
+
+ps
+Display Detailed Information for All Processes:
+
+ps -ef
+Display Process Tree:
+
+pstree
+Display All Processes in a Tree-Like Structure:
+
+ps auxf
+Display Processes in a Process Group:
+
+ps -e -o pid,ppid,cmd,pgid,sid,tty,stat
+This command displays the process ID, parent process ID, command, process group ID, session ID, terminal, and process status for each process.
+
+These commands will provide different levels of detail about the running processes on your system. Choose the one that best fits your needs based on the information you are looking for.
+
+7. Check all running process under user
+Ans:To check all running processes for a specific user, you can use the ps command with the -u option followed by the username. Here's the command to achieve this:ps -u username
+Replace username with the actual username for which you want to check the running processes.
+
+For example, to check all running processes for the user "john":
+
+ps -u john
+This command will display a list of all running processes associated with the specified username.
+
+8. Kill any process via it’s PID
+Ans:To terminate (kill) a process by its Process ID (PID), you can use the kill command in the terminal. Here's how you can do it:
+
+First, find out the PID of the process you want to terminate. You can use the ps command to list the processes and find the PID associated with the process you want to terminate. For example:
+
+ps aux | grep process_name
+Replace process_name with the name or part of the name of the process you are looking for.
+
+Once you have the PID of the process, use the kill command followed by the PID to terminate the process. For example, to kill a process with PID 12345:
+
+kill 12345
+If you need to force the termination of the process, you can use the -9 (SIGKILL) option with kill:
+
+kill -9 12345
+Replace 12345 with the actual PID of the process you want to terminate.
+
+Keep in mind that using kill without -9 sends a termination signal (SIGTERM) to the process, allowing it to perform cleanup actions before exiting. Using -9 (SIGKILL) forcefully terminates the process without allowing it to clean up. It's usually recommended to try the regular kill first and resort to -9 if the process does not respond to the regular termination signal.
+
+9. Change nice values for any new process
+Ans:To set the nice value for a new process, you can use the nice command or its equivalent renice. The nice value determines the scheduling priority of a process, with lower values indicating higher priority.
+
+Using nice for a New Process:
+To start a new process with a specific nice value, use the nice command followed by the desired nice value and the command you want to run. For example:
+
+nice -n 10 your_command
+Replace 10 with the desired nice value (values range from -20 to 19, with lower values having higher priority), and replace your_command with the actual command you want to run.
+
+Using renice to Change Nice Value of an Existing Process:
+To change the nice value of an existing process, you can use the renice command followed by the nice value and the process ID (PID). For example:
+
+renice 10 -p PID
+Replace 10 with the desired nice value, and replace PID with the process ID of the process you want to adjust.
+
+Keep in mind that adjusting the nice value requires appropriate permissions. If you don't have the necessary privileges, you may need to use sudo before the command to run it with superuser privileges.
+
+10.Change nice value for any running user
+Ans:To change the nice value (scheduling priority) of a running process owned by a specific user, you'll use the renice command. Here's how you can do it:
+
+First, identify the process ID (PID) of the running process you want to modify. You can use the ps command to list processes and find the PID of the process owned by the user. For example, to find the PID of processes owned by the user "john":
+
+ps -u john
+Note down the PID of the process you want to modify.
+
+Use the renice command to change the nice value for the process. You'll need superuser privileges (root or sudo) to adjust the nice value of a process not owned by your user. For example, to change the nice value to 10 for a process with PID 12345:
+
+sudo renice 10 -p 12345
+Replace 10 with the desired nice value (values range from -20 to 19, with lower values having higher priority), and replace 12345 with the actual PID of the process you want to adjust.
+
+Keep in mind that changing the nice value requires appropriate permissions. Using sudo before the renice command ensures that you have the necessary privileges to modify the nice value of a process.
+
+11.Check the status of sshd.service
+Ans:
+To check the status of the SSH (sshd) service on a Linux system, you can use the systemctl command, which is the standard tool for controlling and managing services on a systemd-based system. Here's how to check the status of the SSH service:
+
+
+systemctl status sshd.service
+This command will display detailed information about the current status of the SSH service, including whether it's running, any errors, and other relevant information.
+
+If you're not running systemd or your system uses a different init system, the command to check the SSH service status may vary. However, on most modern Linux distributions, systemd is the default init system.
+
+12.Stop the servive of sshd.service
+Ans:To stop the SSH (sshd) service on a Linux system using systemctl, you can use the following command:
+
+sudo systemctl stop sshd.service
+This command will stop the SSH service (sshd.service) immediately. Keep in mind that you typically need superuser privileges (hence sudo) to start or stop services.
+
+If you're using a different init system or older versions of SSH that use init scripts, the command to stop the service may differ. However, for modern Linux distributions using systemd, the systemctl command is the standard way to manage services, including starting and stopping them.
+
+13.Start the service of sshd.service
+Ans:To start the SSH (sshd) service on a Linux system using systemctl, you can use the following command:
+
+sudo systemctl start sshd.service
+This command will start the SSH service (sshd.service). Make sure you have the necessary privileges (hence sudo) to start services.
+
+If you're using a different init system or older versions of SSH that use init scripts, the command to start the service may differ. However, for modern Linux distributions using systemd, the systemctl command is the standard way to manage services, including starting and stopping them.
+
+14.Login in server vm
+Ans:To log in to a server virtual machine (VM), you'll typically use SSH (Secure Shell) if it's a remote server. Here's a step-by-step process to log in using SSH:
+
+Open a Terminal (local machine):
+Open a terminal on your local machine. This could be the terminal application on your computer if you're using a desktop OS, or it could be a terminal emulator within a virtualization application.
+
+Use SSH to Connect:
+Use the ssh command to connect to the server VM. Replace username with your username and server_ip with the IP address or hostname of the server VM:
+
+ssh username@server_ip
+If using a specific port (other than the default SSH port 22), you can specify it with the -p option:
+
+ssh -p PORT username@server_ip
+Enter Password (if required):
+If it's your first time connecting to the server or if SSH key authentication is not set up, you'll be prompted to enter the password associated with the username.
+
+Authenticate with SSH Key (optional):
+If you've set up SSH key authentication, you won't need to enter a password. Instead, your SSH key will be used to authenticate you.
+
+ssh -i /path/to/private_key username@server_ip
+Replace /path/to/private_key with the actual path to your private SSH key.
+
+You're Now Logged In:
+Once authenticated, you will be logged in to the server VM and can use the terminal on your local machine to interact with the server.
+
+Remember to replace username and server_ip with your actual username and the IP address or hostname of the server VM you want to connect to.
+
+
+15.Display the status of “chronyd”
+Ans:To display the status of the "chronyd" service, you can use the systemctl command in a Linux terminal. Here's how you can check the status:
+
+sudo systemctl status chronyd
+This command will provide detailed information about the status of the "chronyd" service, including whether it's running, any errors, and other relevant information.
+
+If the "chronyd" service is active and running, you'll see output indicating its status, when it was started, and other relevant details. If it's inactive or not running, the output will reflect that status as well.
+
+
+16.Restart “sshd.service”
+Ans:To restart the SSH (sshd) service on a Linux system using systemctl, you can use the following command:
+
+sudo systemctl restart sshd.service
+This command will stop and then start the SSH service (sshd.service), effectively restarting it. Make sure you have the necessary privileges (hence sudo) to restart services.
+
+After running this command, the SSH service will be restarted, and any configuration changes or updates will take effect.
+
+
+• TASK: 3
+
+1. Start desktop machine
+Ans:Starting a desktop machine can be done physically by pressing the power button on the computer or virtually if you're working with a virtual machine. Since you mentioned "desktop machine," I'll assume you're referring to a physical desktop.
+
+To start a physical desktop machine:
+
+Make sure the desktop machine is connected to a power source and the power cable is plugged in securely.
+
+Locate the power button on the desktop machine. It's usually on the front or top of the computer case.
+
+Press the power button to start the machine. The computer should begin its boot process, and you should see the manufacturer's logo or a startup screen.
+
+Wait for the operating system to load. Depending on the speed of your hardware and the operating system, this may take a few moments.
+
+Once the operating system is loaded, you can log in and start using the desktop machine.
+
+If you're referring to starting a virtual machine, the process would depend on the virtualization software you're using (e.g., VirtualBox, VMware, Hyper-V). Let me know if you need instructions for starting a virtual machine.
+
+2. Get remote access of server machine
+Ans:To get remote access to a server machine, you'll typically use SSH (Secure Shell), which provides a secure way to access the server over a network. Here's a step-by-step guide to establish a remote SSH connection to a server:
+
+Get Server Details:
+Obtain the following information about the server you want to connect to:
+
+IP address or hostname of the server.
+Username to log in as.
+Open a Terminal (Local Machine):
+Open a terminal or command prompt on your local machine.
+
+Connect using SSH:
+Use the ssh command to connect to the server. Replace username with your actual username and server_ip with the IP address or hostname of the server.
+
+
+ssh username@server_ip
+If you're using a non-standard SSH port (other than the default port 22), you can specify it with the -p option:
+
+ssh -p PORT username@server_ip
+Enter Password or SSH Key Passphrase:
+If it's your first time connecting to the server or if SSH key authentication is not set up, you'll be prompted to enter the password associated with the username. If using SSH key authentication, you may need to enter the passphrase for your SSH key.
+
+You're Now Connected to the Server:
+Once authenticated, you will be connected to the server remotely via SSH, and you can use the terminal on your local machine to interact with the server.
+
+Make sure you have the necessary credentials and permissions to access the server. If you encounter any issues or need further assistance, feel free to ask.
+
+3. Create new user in server name “user1”
+Ans:To create a new user named "user1" on a Linux server, you can use the adduser or useradd command, depending on your distribution. Here's a general guide:
+
+Using adduser (interactive and user-friendly):
+
+sudo adduser user1
+Follow the prompts to set a password and provide additional user information as needed.
+
+Using useradd (command-line):
+
+sudo useradd user1
+This command will create the user, but you'll need to set a password separately using the passwd command:
+
+sudo passwd user1
+Follow the prompts to set the password.
+
+Grant sudo (optional):
+If you want to grant administrative privileges to the user (add them to the sudo group), you can use the usermod command:
+
+sudo usermod -aG sudo user1
+Replace sudo with the appropriate group name based on your distribution (e.g., wheel on some systems).
+
+The user "user1" should now be created and, if desired, have sudo privileges. Adjust the steps slightly if you need to customize the user's home directory, shell, or other settings during user creation.
+
+4. From desktop machine,login “user1” of server user
+Ans:To log in as "user1" on the server from your desktop machine, you'll use SSH to establish a remote connection. Here are the steps to log in as "user1" on the server from your desktop:
+
+Open a Terminal (Desktop Machine):
+Open a terminal or command prompt on your desktop machine.
+
+Use SSH to Connect to the Server:
+Use the ssh command to connect to the server as "user1". Replace server_ip with the actual IP address or hostname of the server.
+
+ssh user1@server_ip
+If you're using a non-standard SSH port, you can specify it with the -p option:
+ 
+ssh -p PORT user1@server_ip
+Enter Password or SSH Key Passphrase:
+If it's your first time connecting or if SSH key authentication is not set up, you'll be prompted to enter the password associated with "user1" or the SSH key passphrase.
+
+You're Now Logged In as "user1":
+Once authenticated, you'll be logged in to the server as "user1" and can use the terminal on your local machine to interact with the server.
+
+Ensure you have the correct credentials and permissions to log in as "user1". If you encounter any issues or need further assistance, feel free to ask.
+
+5. Execute single command “hostname” , on remote host
+(server), and as a remote user “user1”
+Ans:To execute the hostname command on the remote server as the remote user "user1," you can use SSH. Here's the command to achieve this:
+
+ssh user1@server_ip 'hostname'
+Replace server_ip with the actual IP address or hostname of the server. When you run this command, it will connect to the server as "user1" and execute the hostname command remotely, displaying the server's hostname.
+
+6. Display a list of currently logged into the computer
+Ans:
+To display a list of currently logged-in users on a Linux server, you can use the who or w command. Here's how:
+
+Using who command:
+
+who
+This will display a list of users currently logged in, along with information such as username, terminal, date, and time of login.
+
+Using w command:
+
+w
+The w command provides more detailed information, including the username, terminal, from where the user logged in, idle time, JCPU (total CPU time used by the job's processes), and more.
+
+These commands will provide information about currently logged-in users on the system. If you need additional details or have specific requirements, feel free to ask.
+
+7. Generate private-public ssh key with password
+Ans:To generate a SSH key pair with a passphrase (password) for added security, you'll use the ssh-keygen command. Here are the steps to generate a private-public SSH key pair with a passphrase:
+
+Open a Terminal:
+Open a terminal on your local machine.
+
+Generate SSH Key Pair:
+Use the ssh-keygen command to generate the SSH key pair. You'll be prompted to enter a file to save the key and the passphrase.
+
+bash
+Copy code
+ssh-keygen -t rsa -b 2048
+Replace -t rsa with the desired key type (rsa, dsa, ecdsa, ed25519) and -b 2048 with the desired key length (2048 bits is commonly used).
+
+Enter File Location and Passphrase:
+You'll be prompted to enter the file to save the key. Press Enter to accept the default location, usually ~/.ssh/id_rsa for the private key.
+
+You'll then be prompted to enter a passphrase. Enter a strong passphrase, which acts as an extra layer of security.
+
+Confirm Passphrase:
+Re-enter the passphrase to confirm.
+
+SSH Key Pair Generated:
+Your SSH key pair (private and public keys) has been generated.
+
+The private key will be saved in ~/.ssh/id_rsa (or the location you specified) and the public key in ~/.ssh/id_rsa.pub. The private key is protected by the passphrase you entered.
+
+You can now use this SSH key pair to authenticate to remote servers. When connecting to a server, you'll be prompted to enter the passphrase for the private key.
+
+
+8. Import this key on remote host side
+Ans:To import your SSH key (public key) to the remote host and allow authentication using this key, you need to copy the public key to the ~/.ssh/authorized_keys file on the remote host. Here are the steps to achieve this:
+
+Copy the Public Key (Local Machine):
+First, copy the content of the public key file on your local machine. You can use the cat command to display the content, and then copy it.
+
+bash
+Copy code
+cat ~/.ssh/id_rsa.pub
+Copy the entire content displayed.
+
+SSH to the Remote Host:
+Log in to the remote host using SSH.
+
+bash
+Copy code
+ssh user@remote_host_ip
+Replace user with your username and remote_host_ip with the IP address or hostname of the remote host.
+
+Edit the authorized_keys File:
+Once logged in to the remote host, use a text editor (like nano or vi) to edit the authorized_keys file.
+
+bash
+Copy code
+nano ~/.ssh/authorized_keys
+If the authorized_keys file does not exist, you can create it.
+
+Paste the Public Key (Remote Host):
+Paste the previously copied public key at the end of the authorized_keys file.
+
+Save and Exit (Remote Host):
+Save the file and exit the text editor.
+
+For nano, press Ctrl + X, then press Y to confirm changes, and press Enter to exit.
+For vi, type :wq and press Enter.
+Set Correct Permissions (Remote Host):
+Ensure the correct permissions for the ~/.ssh directory and authorized_keys file on the remote host.
+
+bash
+Copy code
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+These commands set the appropriate permissions: 700 for the ~/.ssh directory and 600 for the authorized_keys file.
+
+You have now imported your SSH public key to the remote host. You can use your private key to authenticate to the remote host without entering a password, provided you have entered a passphrase when generating the key pair.
+
+• Task: 4
+
+1. Open general logs
+Ans:In a Linux-based system, "general logs" typically refer to system logs, which contain a record of system events, processes, and other important information. These logs are usually stored in the /var/log directory.
+
+To view the general system logs, you can use various commands and tools depending on the specific log you want to access. Here are some common logs you might want to check and how to view them:
+
+System Log (syslog or messages):
+Use the cat or less command to view the system log:
+
+cat /var/log/syslog
+or
+
+less /var/log/syslog
+You might also find logs in /var/log/messages on some systems.
+
+Kernel Log (kern.log):
+Use the same approach as above to view the kernel log:
+
+cat /var/log/kern.log
+or
+
+less /var/log/kern.log
+Authentication Logs (auth.log or secure):
+View logs related to authentication:
+
+cat /var/log/auth.log
+or
+
+less /var/log/auth.log
+On some systems, you might find this information in /var/log/secure.
+
+Application Logs:
+Application-specific logs are often located in /var/log. For example, Apache logs might be in /var/log/apache2/.
+
+ls /var/log
+Use cd to navigate to a specific application's log directory, and then use cat or less to view the logs.
+
+Remember, viewing system logs typically requires superuser privileges. You can use sudo before these commands to elevate your privileges if needed.
+
+2. Open secure message logs
+Ans:The location and name of the secure message logs can vary slightly depending on the specific Linux distribution you are using. However, a common location for authentication-related logs is /var/log/auth.log on Debian-based distributions and /var/log/secure on Red Hat-based distributions.
+
+To view the secure message logs, you can use the cat or less command, depending on whether you want to display the entire content at once or page through the content.
+
+Here are the commands to view the secure message logs for both Debian-based and Red Hat-based distributions:
+
+For Debian-based distributions (e.g., Ubuntu):
+
+cat /var/log/auth.log
+For Red Hat-based distributions (e.g., CentOS):
+
+cat /var/log/secure
+Replace cat with less if you prefer to view the logs one page at a time:
+
+less /var/log/auth.log   # For Debian-based distributions
+less /var/log/secure     # For Red Hat-based distributions
+Remember that viewing logs often requires superuser privileges, so you may need to use sudo before the commands if you are not logged in as the root user.
+
+3. Open only mail logs
+AnS:Mail logs are often stored in /var/log/mail.log on Debian-based distributions and /var/log/maillog on Red Hat-based distributions. Let's open these logs using the appropriate command based on the distribution you're using:
+
+For Debian-based distributions (e.g., Ubuntu), to view mail logs:
+
+sudo less /var/log/mail.log
+For Red Hat-based distributions (e.g., CentOS), to view mail logs:
+
+sudo less /var/log/maillog
+Replace less with cat if you prefer to display the entire content at once rather than paging through it.
+
+Please note that you might need superuser privileges (sudo) to view these logs. Adjust the commands accordingly based on your specific distribution and permissions.
+
+4. Check scheduling logs
+Ans:Scheduling-related logs are typically found in /var/log/cron or /var/log/syslog depending on the distribution. The cron daemon is responsible for scheduling tasks on a Linux system.
+
+To check scheduling logs, you can use the cat or less command based on your preference:
+
+For viewing scheduling logs on Debian-based distributions (e.g., Ubuntu), you can use:
+
+sudo cat /var/log/syslog
+or
+
+sudo less /var/log/syslog
+For viewing scheduling logs on Red Hat-based distributions (e.g., CentOS), you can use:
+
+sudo cat /var/log/cron
+or
+
+sudo less /var/log/cron
+Replace cat with less if you prefer to page through the logs.
+
+Remember to use sudo to ensure you have the necessary permissions to view the logs. Adjust the commands based on your specific distribution and permissions.
+
+5. Check booting logs
+Ans:Booting-related logs are typically found in /var/log/boot.log or /var/log/syslog. These logs contain information related to the boot process of the system.
+
+To check booting logs, you can use the cat or less command based on your preference:
+
+For viewing booting logs on Debian-based distributions (e.g., Ubuntu), you can use:
+
+sudo cat /var/log/boot.log
+or
+
+sudo less /var/log/boot.log
+For viewing booting logs on Red Hat-based distributions (e.g., CentOS), you can use:
+
+sudo cat /var/log/boot.log
+or
+
+sudo less /var/log/boot.log
+Replace cat with less if you prefer to page through the logs.
+
+Remember to use sudo to ensure you have the necessary permissions to view the logs. Adjust the commands based on your specific distribution and permissions.
+
+6. See the info about “bad logging”
+Ans:To check for information related to "bad logging," we'll typically look into the general system logs or authentication logs, as "bad logging" could refer to failed login attempts or other security-related events.
+
+Let's check the general system logs and authentication logs for any relevant information:
+
+General System Logs (syslog or messages) for "bad logging":
+
+bash
+Copy code
+sudo grep "bad logging" /var/log/syslog
+or
+
+sudo grep "bad logging" /var/log/messages
+Authentication Logs (auth.log or secure) for failed login attempts or "bad logging":
+
+sudo grep "bad logging" /var/log/auth.log
+or
+
+sudo grep "bad logging" /var/log/secure
+Replace grep with cat if you want to see the entire content instead of filtering specific entries.
+
+If "bad logging" refers to a specific error message, replace "bad logging" with the appropriate keyword or error message you are looking for.
+
+These commands will search the specified logs for the term "bad logging" and display any matching entries. Adjust the commands based on your specific distribution and the exact information you're looking for.
+
+7. Check today’s temporary logs
+Ans:Temporary logs in a Linux system are usually stored in the /var/log directory or its subdirectories. The specific log files and locations may vary based on your Linux distribution and configuration.
+
+To view the logs for today, you can use the grep and awk commands to filter logs for the current date. Here's a general approach:
+
+grep "$(date +'%b %d')" /var/log/* | less
+This command uses grep to search for logs that contain the current month and day (e.g., "Oct 08" for October 8) in the /var/log directory and its subdirectories. The output is then piped to less for easier viewing.
+
+Keep in mind that logs are usually rotated and archived, so the current day's logs might be stored in an archived file (e.g., syslog.1, syslog.2.gz, etc.). If you want to include archived logs, you can use tools like zcat or zgrep to read compressed logs.
+
+zcat /var/log/syslog.*.gz | grep "$(date +'%b %d')" | less
+Replace syslog with the specific log file you are interested in.
+
+Adjust the commands based on your specific distribution and log file names. If you have a particular log file or directory in mind, please provide more details for a more accurate command.
+
+8. Set new time zone
+Ans:To set a new time zone on a Linux system, you'll use the timedatectl command, which is available on systems that use systemd. Here's how you can change the time zone:
+
+Check Current Time Zone:
+Start by checking the current time zone using the timedatectl command:
+
+bash
+Copy code
+timedatectl
+The output will display the current time zone, including its abbreviation and other details.
+
+Set a New Time Zone:
+To set a new time zone, use the timedatectl set-timezone command followed by the desired time zone. For example, to set the time zone to "America/New_York":
+
+sudo timedatectl set-timezone America/New_York
+Replace "America/New_York" with the appropriate time zone according to the IANA time zone database.
+
+Verify the Change:
+Verify that the time zone has been updated by running timedatectl again:
+
+
+timedatectl
+Check the Time zone field in the output to confirm the change.
+
+The time zone has now been set to the new value, and the system will use this time zone for timekeeping.
+
+Keep in mind that you might need superuser privileges (hence sudo) to change the time zone. Also, note that this procedure may vary slightly depending on your specific Linux distribution.
+
+Module 17
+
+Linux server - Configure local storage Assignment
+
+• Level Basic to Advance
+
+1. What is…
+
+a. /dev/sda
+Ans:In the context of Unix-like operating systems, including Linux, /dev/sda is a special file or device node that represents the first SATA hard drive in the system. The /dev directory contains device files that correspond to various hardware devices and partitions in the system.
+
+Breaking down the components of /dev/sda:
+
+/dev: This is a directory in Unix-like operating systems that contains device files representing hardware devices or pseudo-devices.
+sda: This is a shorthand identifier for the first SATA (Serial ATA) hard drive in the system. The letters "sd" stand for "scsi disk," a historical reference to the SCSI protocol, which was used as the basis for the modern SATA protocol. The letter "a" denotes the first drive, "b" would represent the second drive, and so on.
+Device files in the /dev directory are used by the operating system to access and manage hardware components, including hard drives, CD/DVD drives, USB drives, and more. /dev/sda allows the operating system and applications to read from and write to the first SATA hard drive in the system.
+
+b. /dev/sdb
+Ans:In Unix-like operating systems, including Linux, /dev/sdb is a special file or device node that represents the second SATA (Serial ATA) hard drive or scsi disk in the system. It's similar to /dev/sda, but "b" indicates the second SATA hard drive, "c" would indicate the third, and so on.
+
+Each letter following "sd" (which stands for "scsi disk") corresponds to a different drive. For example:
+
+/dev/sda: The first SATA hard drive
+/dev/sdb: The second SATA hard drive
+/dev/sdc: The third SATA hard drive
+and so on.
+These device files in the /dev directory allow the operating system and applications to interact with and manage various hardware components, including hard drives, CD/DVD drives, USB drives, and more. /dev/sdb enables access and management of the second SATA hard drive in the system.
+c. /dev/sda1
+Ans:In Unix-like operating systems, including Linux, /dev/sda1 is a specific partition on the first SATA (Serial ATA) hard drive in the system. The notation /dev/sda represents the entire first SATA hard drive, and appending a number (e.g., 1) indicates a specific partition on that drive.
+
+Breaking down the components of /dev/sda1:
+
+/dev: This is a directory in Unix-like operating systems that contains device files representing hardware devices or pseudo-devices.
+sda: This is a shorthand identifier for the first SATA hard drive in the system (the letters "sd" stand for "scsi disk," a historical reference to the SCSI protocol, which is the basis for the modern SATA protocol).
+1: This number represents the first partition on the first SATA hard drive (/dev/sda).
+Partitions allow a single physical hard drive to be divided into multiple logical sections, each of which can be used to store data or host a different file system. /dev/sda1 would typically be used to access and manage the first partition on the first SATA hard drive in the system. If there were additional partitions on the same drive, they would be represented as /dev/sda2, /dev/sda3, and so on.
+
+d. /dev/sda2
+Ans:In Unix-like operating systems, including Linux, /dev/sda2 is a specific partition on the first SATA (Serial ATA) hard drive in the system. The notation /dev/sda represents the entire first SATA hard drive, and appending a number (e.g., 2) indicates a specific partition on that drive.
+
+Breaking down the components of /dev/sda2:
+
+/dev: This is a directory in Unix-like operating systems that contains device files representing hardware devices or pseudo-devices.
+sda: This is a shorthand identifier for the first SATA hard drive in the system (the letters "sd" stand for "scsi disk," a historical reference to the SCSI protocol, which is the basis for the modern SATA protocol).
+2: This number represents the second partition on the first SATA hard drive (/dev/sda).
+Partitions allow a single physical hard drive to be divided into multiple logical sections, each of which can be used to store data or host a different file system. /dev/sda2 would typically be used to access and manage the second partition on the first SATA hard drive in the system. If there were additional partitions on the same drive, they would be represented as /dev/sda3, /dev/sda4, and so on.
+
+e. /dev/vda
+Ans:/dev/vda is a device node representing a virtual hard drive typically used in virtualization environments, such as virtual machines (VMs) running on platforms like KVM (Kernel-based Virtual Machine) or QEMU (Quick Emulator). The "vda" nomenclature is often used for virtual hard drives in cloud computing environments.
+
+Breaking down the components of /dev/vda:
+
+/dev: This is a directory in Unix-like operating systems that contains device files representing hardware devices or pseudo-devices.
+vda: The "vda" identifier is commonly used to represent a virtual hard drive in virtualized environments. The "vd" stands for "virtual disk."
+In many virtualization setups, the virtual hard drives are assigned labels like /dev/vda, /dev/vdb, and so on, to distinguish them from physical hard drives (typically labeled as /dev/sda, /dev/sdb, etc.).
+
+For example:
+
+/dev/vda: The first virtual hard drive
+/dev/vdb: The second virtual hard drive
+/dev/vdc: The third virtual hard drive
+and so on.
+In a virtualized environment, /dev/vda would be used to access and manage the first virtual hard drive associated with a virtual machine. Additional virtual hard drives within the same virtual machine would be represented as /dev/vdb, /dev/vdc, and so forth.
+
+f. /dev/vda1
+Ans:In Unix-like operating systems, including Linux, /dev/vda1 is a specific partition on a virtual hard drive represented by the device node /dev/vda. The notation /dev/vda represents the entire virtual hard drive, and appending a number (e.g., 1) indicates a specific partition on that virtual hard drive.
+
+Breaking down the components of /dev/vda1:
+
+/dev: This is a directory in Unix-like operating systems that contains device files representing hardware devices or pseudo-devices.
+
+vda: This identifier represents a virtual hard drive. The "vd" stands for "virtual disk," and "a" typically denotes the first virtual hard drive.
+
+1: This number represents the first partition on the virtual hard drive (/dev/vda).
+
+Partitions allow a single virtual hard drive to be divided into multiple logical sections, each of which can be used to store data or host a different file system. /dev/vda1 would typically be used to access and manage the first partition on the virtual hard drive represented by /dev/vda. If there were additional partitions on the same virtual hard drive, they would be represented as /dev/vda2, /dev/vda3, and so on.
+
+2. What is the use of “df “command?
+Ans:The df command, which stands for "disk free," is a command-line utility used in Unix-like operating systems, including Linux and macOS, to display information about the available and used disk space on file systems.
+
+Here are the common uses and features of the df command:
+
+Display Disk Space Usage: The primary purpose of the df command is to display the amount of free and used disk space on the specified file systems.
+
+List File Systems: It lists all mounted file systems along with their corresponding mount points, total size, used space, available space, and usage percentage.
+
+Human-Readable Output: By using the -h or --human-readable option, df displays output in a human-readable format, making it easier to interpret sizes in kilobytes (K), megabytes (M), gigabytes (G), etc.
+
+Specific File System: You can specify a particular file system or mount point to only display information about that specific file system.
+
+Summary Information: When used without any options or specifying a file system, df provides a summary of disk usage for all mounted file systems.
+
+Display Inodes: Using the -i or --inodes option, df displays information about the number of free and used inodes on the file system.
+
+Exclude File Systems: You can use the -x or --exclude-type option to exclude specific file system types from the output.
+
+Display Total: The -t or --total option displays a summary row showing the total space and usage across all file systems.
+
+Usage examples:
+
+df: Display disk space usage for all mounted file systems.
+df -h: Display disk space usage in a human-readable format.
+df -hT: Display disk space usage in a human-readable format with file system types.
+df -h /dev/sda1: Display disk space usage for the /dev/sda1 partition.
+df -i: Display information about inodes for all file systems.
+df -t ext4: Display disk space usage for all ext4 file systems.
+The df command is useful for system administrators and users to monitor disk usage and manage storage effectively.
+
+3. From which command we get UUID of file system?
+Ans:You can use the blkid command to obtain the UUID (Universally Unique Identifier) of a file system in Linux. The blkid command allows you to query the UUID and other information of block devices, including partitions and file systems.
+
+To retrieve the UUID of a specific file system (e.g., a partition), you can use the blkid command followed by the device file associated with the file system. For example, to obtain the UUID of a partition located at /dev/sda1, you would use the following command:
+
+blkid /dev/sda1
+The output will display various pieces of information about the specified partition, including its UUID.
+
+If you want to list the UUIDs of all block devices and partitions, you can simply run the blkid command without specifying a particular device:
+
+blkid
+This will provide a list of all block devices and their respective UUIDs.
+
+Keep in mind that to run blkid or other system-related commands, you may need superuser privileges (e.g., using sudo), especially if querying block devices that require administrative access.
+
+4. I want to use /dev/sdb1, which command will used? (wright down full argument)
+Ans:To use the /dev/sdb1 partition, you typically need to mount it to a directory in the filesystem. The mount command is used to mount a filesystem in Unix-like operating systems. Assuming you have the necessary permissions, you can use the following command:
+
+bash
+Copy code
+sudo mount /dev/sdb1 /path/to/mountpoint
+Replace /path/to/mountpoint with the actual directory where you want to mount the /dev/sdb1 partition.
+
+If the mount point doesn't exist, you'll need to create it first using the mkdir (make directory) command. For example:
+
+sudo mkdir /mnt/mydrive
+Then, you can use the mount command to mount the partition:
+
+sudo mount /dev/sdb1 /mnt/mydrive
+To unmount the partition, you can use the umount command:
+
+sudo umount /dev/sdb1
+Remember to replace /dev/sdb1 and /mnt/mydrive with the appropriate partition and mount point for your system. Additionally, you may need to adjust permissions or use sudo based on your system configuration and user privileges.
+
+5. Where we find all hardware info?
+Ans:To gather hardware information in a Unix-like operating system, you can use a combination of commands and utilities to query various system files and directories. Here are some common methods to obtain hardware information:
+
+lshw (list hardware):
+The lshw command provides detailed information about various hardware components in your system. It can display information about the processor, memory, storage devices, network interfaces, and more.
+
+sudo lshw
+lscpu (list CPU information):
+Use the lscpu command to display detailed information about the CPU(s) in your system, including the number of cores, threads, and other CPU-related details.
+
+lscpu
+lsblk (list block devices):
+The lsblk command lists block devices like hard drives, partitions, and their mount points. It provides information about storage devices and their partitions.
+
+lsblk
+lspci (list PCI devices):
+Use lspci to list all PCI devices connected to your system, including details about graphics cards, network controllers, and more.
+
+lspci
+lsusb (list USB devices):
+The lsusb command lists USB devices connected to the system, along with details about the USB controllers and devices.
+
+lsusb
+dmidecode (DMI table decoder):
+dmidecode provides information about the system's hardware components as stored in the DMI (Desktop Management Interface) table. This includes details about the BIOS, motherboard, memory, and more.
+
+sudo dmidecode
+hwinfo (hardware information tool):
+The hwinfo command provides a comprehensive view of hardware information, including details about the CPU, memory, storage, graphics, and more.
+
+sudo hwinfo
+inxi (system information script):
+If installed, the inxi command provides a detailed summary of system information, including hardware, memory, storage, and more.
+
+inxi -Fx
+These commands should provide a good starting point to gather detailed hardware information about your system. Depending on your specific needs and available utilities, you may choose one or more of these commands to obtain the desired hardware information.
+
+6. Which command is used to create MBR partition?
+Ans:To create an MBR (Master Boot Record) partition in Linux, you can use the parted command. parted is a flexible and powerful utility used for disk partitioning. Here's how you can use parted to create an MBR partition:
+
+Identify the Disk:
+First, identify the disk you want to create the MBR partition on. You can use the lsblk or fdisk -l command to list available disks and their partitions.
+
+Launch parted:
+Run parted with the path to the disk you want to partition. Replace /dev/sdX with the appropriate disk identifier (e.g., /dev/sdb).
+
+sudo parted /dev/sdX
+Create the MBR Partition:
+Within the parted interactive mode, you can use the mklabel command to create an MBR partition table on the disk. This will erase any existing partition table on the disk, so be careful.
+
+(parted) mklabel msdos
+Create the Partition:
+Now, you can use the mkpart command to create a partition within the MBR partition table.
+
+For example, to create a primary partition from 0 to 10GB in size:
+
+(parted) mkpart primary 0GB 10GB
+Quit and Save:
+After creating the partition, you can type quit to exit parted and save the changes to the disk.
+
+(parted) quit
+Remember to replace /dev/sdX with the correct disk identifier for your system, and adjust the partition size and type according to your requirements.
+
+Please exercise caution when creating or modifying partitions, as these operations can lead to data loss if not performed carefully. Make sure to back up any important data before partitioning a disk.
+
+7. Which command is used to create GPT partition?
+Ans:To create a GPT (GUID Partition Table) partition on a disk in Linux, you can use the gdisk or parted command. I'll provide instructions for using both commands:
+
+Using gdisk:
+Identify the Disk:
+First, identify the disk you want to create the GPT partition on. You can use the lsblk or fdisk -l command to list available disks and their partitions.
+
+Install gdisk (if not installed):
+Ensure that the gdisk tool is installed on your system. If not, you can install it using your package manager. For example, on Ubuntu, you can use:
+
+sudo apt update
+sudo apt install gdisk
+Launch gdisk:
+Run gdisk with the path to the disk you want to partition. Replace /dev/sdX with the appropriate disk identifier (e.g., /dev/sdb).
+
+sudo gdisk /dev/sdX
+Create the GPT Partition:
+Within the gdisk interactive mode, use the n command to create a new partition.
+
+Specify Partition Details:
+Follow the prompts to specify the partition number, starting and ending sectors, partition type, and other details for the GPT partition.
+
+Write Changes and Quit:
+After creating the partition, use the w command to write the changes to the disk and exit gdisk.
+
+Using parted:
+Identify the Disk:
+Identify the disk you want to create the GPT partition on using the lsblk or fdisk -l command.
+
+Install parted (if not installed):
+Ensure that the parted tool is installed on your system. If not, you can install it using your package manager.
+
+Launch parted:
+Run parted with the path to the disk you want to partition. Replace /dev/sdX with the appropriate disk identifier (e.g., /dev/sdb).
+
+sudo parted /dev/sdX
+Create the GPT Partition:
+Within the parted interactive mode, use the mklabel command to create a GPT partition table.
+
+(parted) mklabel gpt
+Create the Partition:
+Now, you can use the mkpart command to create a partition within the GPT partition table.
+
+For example, to create a primary partition from 0 to 10GB in size:
+
+(parted) mkpart primary 0GB 10GB
+Quit and Save:
+After creating the partition, you can type quit to exit parted and save the changes to the disk.
+
+Remember to replace /dev/sdX with the correct disk identifier for your system, and adjust the partition size and type according to your requirements.
+
+Please exercise caution when creating or modifying partitions, as these operations can lead to data loss if not performed carefully. Make sure to back up any important data before partitioning a disk.
+
+8. What is sda, sdb, sdc, sdb1, sdb2, sdb3?
+Ans:The terms "sda," "sdb," "sdc," "sdb1," "sdb2," and "sdb3" refer to different block devices and partitions on a computer's storage system. These identifiers are commonly used in Unix-like operating systems, particularly Linux, to represent storage devices and their respective partitions. Let's break down what each term typically represents:
+
+sda, sdb, sdc:
+
+These are identifiers for different storage devices (e.g., hard drives, SSDs) connected to the system.
+sda typically represents the first storage device detected, sdb represents the second, and so on.
+For example, sda could be the main hard drive, sdb could be an additional hard drive, and sdc could be another storage device like a USB drive.
+sdb1, sdb2, sdb3:
+
+These are identifiers for partitions on a specific storage device, such as sdb.
+The numbers (1, 2, 3, etc.) indicate different partitions on the specified storage device (sdb in this case).
+For example, sdb1 would be the first partition on the second storage device (sdb), sdb2 would be the second partition, and so on.
+In summary:
+
+sda, sdb, sdc, etc., represent different storage devices (hard drives, SSDs, etc.).
+sda1, sdb1, sdb2, etc., represent specific partitions on those storage devices.
+It's important to note that the naming convention and order may vary depending on the system's hardware configuration and the order in which the storage devices were detected during the boot process. Always exercise caution when working with partitions and storage devices to avoid accidental data loss.
+
+9. What is the use of swap partition?
+Ans:A swap partition is a designated section of a hard drive or storage device that is used by the operating system as an extension of RAM (random access memory). When the physical RAM is fully utilized, the operating system can use the swap space to temporarily store data that would otherwise be held in RAM.
+
+Here are the primary uses and benefits of a swap partition:
+
+Virtual RAM Extension:
+
+When the physical RAM is fully utilized, the operating system uses the swap space as virtual RAM to provide additional memory for running applications and processes.
+Improves System Performance:
+
+Having swap space can prevent or reduce instances of the system running out of memory (out of RAM), which could cause slowdowns or crashes due to insufficient memory.
+Allows Overcommitment of Memory:
+
+The presence of swap space allows the operating system to overcommit memory (allocate more memory than physically available) with the understanding that it can use the swap space as a backing store.
+Supports Hibernation:
+
+On some systems, the contents of RAM are written to the swap partition when the system is hibernated (powered off but able to resume to the previous state). This allows the system to restore the previous state upon waking.
+Facilitates System Stability:
+
+Swap can help maintain system stability by preventing a system crash due to out-of-memory situations. When RAM is exhausted, the operating system can swap out less-used data to disk, allowing critical system processes to continue functioning.
+Balances Memory Usage:
+
+The operating system uses the swap space intelligently, moving less active or idle data to the swap partition, while keeping frequently accessed data in RAM. This helps to balance memory usage.
+It's important to note that while a swap partition provides additional memory and helps prevent out-of-memory issues, excessive use of swap (often referred to as "swapping") can significantly slow down the system because accessing data from a hard drive is much slower than accessing it from RAM. Therefore, it's ideal to have enough physical RAM to meet the system's requirements and use swap space as a supplementary resource rather than a primary one. Additionally, using an SSD for swap can improve performance compared to a traditional hard drive.
+
+10.Explain LVM
+AnS:LVM, or Logical Volume Manager, is a software-based system that allows for the management and organization of disk drives or partitions into logical volumes, providing increased flexibility, scalability, and manageability in storage management within Unix-like operating systems, including Linux.
+
+Here are the key components and concepts of LVM:
+
+Physical Volumes (PVs):
+
+Physical volumes are individual hard drives, partitions, or even RAID arrays that are set up to be managed by LVM.
+Before using a device with LVM, it needs to be initialized as a physical volume using the pvcreate command.
+Volume Groups (VGs):
+
+A volume group is a collection of physical volumes.
+Once you have physical volumes, you can group them into a volume group using the vgcreate command.
+A volume group is the pool of storage from which logical volumes are created.
+Logical Volumes (LVs):
+
+Logical volumes are like partitions but are more flexible and resizable.
+Logical volumes are created within volume groups using the lvcreate command.
+They can be resized (expanded or shrunk) easily without disrupting data.
+Extent:
+
+An extent is a unit of space within a logical volume.
+Extents are typically small and defined in terms of megabytes.
+Striping and Mirroring:
+
+LVM allows for striping (dividing data into blocks and writing them across multiple physical volumes) and mirroring (maintaining duplicate copies of data) to improve performance and reliability.
+Resize and Shrink:
+
+LVM enables the resizing (expanding or shrinking) of logical volumes and file systems on the fly without unmounting or disrupting data access.
+Snapshot:
+
+LVM allows for creating snapshots of logical volumes, which are read-only copies of the volume at a specific point in time.
+Snapshots can be used for backup purposes or to create consistent backups without affecting the original volume.
+The advantages of using LVM include:
+
+Flexibility: LVM allows for easy resizing, moving, and reorganizing of storage without needing to reformat or rebuild partitions.
+Utilization of Available Space: It efficiently uses available space across multiple disks or partitions.
+Resilience and Redundancy: Through features like mirroring and striping, LVM can provide resilience against disk failures.
+Snapshotting: LVM allows for creating snapshots for data backup and other purposes.
+LVM provides a versatile and powerful framework for managing storage in a more dynamic and efficient way compared to traditional partition-based storage management.
+
+11.Define following terms,
+
+1. PV
+Ans:PV (Physical Volume):
+
+A Physical Volume (PV) is a storage device or a partition of a storage device (e.g., a hard drive or SSD) that is incorporated into the LVM setup.
+Before a device or partition can be used in an LVM configuration, it needs to be initialized as a physical volume using the pvcreate command.
+PVs are the building blocks of LVM, and they represent the actual physical storage resources available for use.
+
+Physical Volume (PV): A raw storage device or partition initialized for use within LVM.Physical Volume (PV): A raw storage device or partition initialized for use within LVM.
+
+2. VG
+Ans:VG (Volume Group):
+
+A Volume Group (VG) is a collection or aggregation of one or more physical volumes (PVs).
+Multiple PVs are grouped together to form a VG using the vgcreate command.
+VGs serve as a pool or reservoir of storage space from which logical volumes (LVs) are created.
+The logical volumes within a VG can span multiple physical volumes, allowing for flexible storage management.
+
+Volume Group (VG): A collection of one or more physical volumes, forming a pool of storage.
+
+3. LV
+Ans:LV (Logical Volume):
+
+A Logical Volume (LV) is a virtual or logical partition that resides within a Volume Group (VG).
+LVs are created within a VG using the lvcreate command and are often used like regular partitions.
+LVs offer flexibility in terms of size adjustments (resizing) and are independent of the underlying physical layout.
+They can be resized dynamically without requiring changes to the file system or data loss.
+Logical Volume (LV): A virtual partition created within a Volume Group, providing flexible and resizable storage space.
+
+12. From which command we can get information about LVM status?
+Ans:To obtain information about the status of Logical Volume Manager (LVM), you can use the lvm command or its related utilities. Here are some useful commands to gather LVM status information:
+
+lvm command:
+
+The lvm command is a top-level command that provides access to various LVM utilities and subcommands. You can use it to access specific LVM-related information.
+pvdisplay (Physical Volume Display):
+
+Use pvdisplay to display detailed information about physical volumes (PVs), including their size, free space, and metadata.pvdisplay
+vgdisplay (Volume Group Display):
+
+vgdisplay provides information about volume groups (VGs), including their size, free space, physical volumes associated, and more.
+
+vgdisplay
+lvdisplay (Logical Volume Display):
+
+Use lvdisplay to display information about logical volumes (LVs), including their size, status, associated volume group, and more.
+
+lvdisplay
+lvs (Logical Volume Status):
+
+The lvs command provides a summary of all logical volumes, including their size, status, and other relevant information.
+
+lvs
+pvs (Physical Volume Status):
+
+pvs displays a summary of all physical volumes, providing information about each one.
+
+pvs
+vgs (Volume Group Status):
+
+vgs gives a summary of all volume groups, providing information about each one.
+
+vgs
+These commands provide valuable insights into the status and configuration of LVM components such as physical volumes, volume groups, and logical volumes, allowing you to monitor and manage your LVM setup effectively. Remember to use these commands with appropriate permissions, often requiring superuser privileges (e.g., using sudo).
+
+• Task :1
+
+1. Check current block details
+
+2. Mount removable media
+
+3. Unmount removable media
+
+4. Create soft link
+
+5. Create hard link
+
+6. Show inode number of all files
+
+7. Find a file is equal to 10 mb
+
+8. Find a file which have more then 10 mb
+
+9. Find directory list
+
+10.Find file list
+
+11.Find soft link list
+
+• Task:2
+
+1. Create a new partition with following requirements, Size 1G File type xfs
+
+2. Create three primary partitions
+
+3. Mount new partitions via UUID and LABLE
+
+4. Create “swap” partition
+
+• Task: 3
+
+1. Create new LVM
+
+2. Extend this new LVM
+
+Module 18
+
+Linux server - Manage user and Groups and
+
+working with file systems
+
+• Assignment Level Basic
+
+1. What is default uid for root user ?
+
+2. What is default uid for system user ?
+
+3. What is the uid for normal users ?
+
+4. How to add comment in user file?
+
+5. From “ /etc/passwd “ which information will we gather ?
+
+6. From “ /etc/shadow “ which information will we gather ?
+
+7. From “ /etc/group “ which information will we gather ?
+
+8. From “ /etc/gshadow “ which information will we gather ?
+
+9. What is the meaning of + and – in file permission?
+
+10.What is “ r “ “ w ” ‘ x “ in file permission
+
+11.What is “ 4 “ “ 2 “ “1” in files permission
+
+12.What is the use of umask?
+
+13.What is default root permission for directory?
+
+• Assignment Level Intermediate
+
+1. How to assign another new home directory for new user?
+
+2. Command to check group membership of any user
+
+3. What happened if I use “ su – “ command ?
+
+4. Which command is used to delete any user with its home directory?
+
+5. How to add new user without home directory ?
+
+6. Command to assign account expiry to the user ?
+
+7. Command to add a new group …
+
+8. What is default root permission for file?
+
+9. What is the default umask for root?
+
+10.What is the default umask for student?
+
+11.Which command is used to set user ownership?
+
+12.Which command is used to set group ownership?
+
+• Assignment Level Advance
+
+1. I have on user with the name of KAMAL, Now, I want to add this user in the group name 
+Nwhich command will used?
+
+2. What is the difference between “ usermod -G “ and “ usermod -aG “
+
+3. What is the meaning of “ -1 “ in password state information?
+
+4. Which command tis used to remove the password of any user?
+
+5. What is the use of “ gpasswd “ ?
+
+6. Command to change password policy
+
+7. What is use of “ sudo “
+
+8. Command to reset virtual machine
+
+9. How to change user and group ownership on same time
+
+10.Command to change user permission on directory
+
+11.List of special permission in Linux 7.0 is……
+
+12.What happened if i used this command…?[ #chmod u+s /user/bin/vim ]
+
+13.What happened if i used this command…. [ #chmod g+s /data ]
+
+• Task: 1
+
+1. Find details about current logged-in user.
+
+2. Show all processes on terminal
+
+3. Create primary group
+
+4. Create supplementary group
+
+5. Find groups details and list on terminal P6. Find user details and list on terminal.
+
+6. Use “sudo”
+
+7. View the last 5 lines of the “ /var/log/messages “
+
+8. Add a new user with name “ NuPuR “
+
+9. Remove this user and user’s home directory
+
+10.Create new supplementary group name is “ whEEL “
+
+11.Create a new user with name “ ELviS “
+
+12.Add / Append a user to a supplementary group
+
+13.Restrict / Lock login access for “ ELviS “ user
+
+14.Create a new user name “ LiNuX without home directory
+
+15.Create a new user name “ RedHat “ with new home directory “
+
+16./etc/HatRed
+
+17.Create a new user with two(2) days expiry
+
+18.Remove password for “ ELviS “ user
+
+19.Check user password policy for “ LiNuX “ user
+
+• Task :2
+
+1. Login from “LiNuX” user
+
+2. Create new directory on desktop name is "FoLdEr”
+
+3. Change group ownership from LiNuX to root on “FoLdEr” directory
+
+4. Create new file on /etc/ with name “ FiLe”
+
+5. Check permissions of above file
+
+6. Login from “student” user
+
+7. Create new directory on students home with name “file1”
+
+8. Remove read and write permission for group and other on above file “file1”
+
+9. Add execute permission for everyone on “file2”
+
+10.Set Read,write,execute for USER
+
+11.Set Read and execute for GROUP
+
+12.Set No permission for other on “Directory1”
+
+13.Create new group name “ateam” , And add two new user in this group
+
+“andy” and “alice”, set password is “password”
+
+14.Login from root and root home directory
+
+15.Create a new directory in “/home” name is “ateam-text”
+
+16.Change the group ownership of the ateam-text directory to “ateam”.
+
+17.Ensure the permission of ateam-text allows group members to create
+
+Module 19
+
+Linux server - Deploy, configure, and maintain systems
+Assignment
+
+• Level Basic to Advance
+
+1. What is RPM package manager?
+2. What is “ yum “
+3. I want to check all list of available packages, which command will help
+4. From which command, we register with RedHat satellite ?
+5. What is the use of repo file?
+6. what is “at”
+7. Where we find “atd” daemon?
+8. Which command is used to get an overview of the pending jobs for user?
+9. Which command is used to remove a scheduled job?
+10.What is the use of ‘crontab -l’ command?
+11.What is the use of ‘crontab -r’ command?
+12.What is bootloader?
+13.is the bootloader in linux 7.0
+14.What is POST?
+15.Full form of POST
+16.Full form of MBR
+17.What is kickstart
+18.What is the use of “url” in kickstart file?
+19.Who allowed the graphical installation to be viewed remotely via VNC?
+20.Which command is used in kickstart for clear the specified partitions before installation?
+21.Which command is ignoring the specified disks when installing?
+22.I want to configure kickstart graphically, what should I do?
+23.How to check the syntax of kickstart configuration file ?
+• Task:1
+1. Run command to register with RedHat satellite( noworry if not registered
+2. Show all available packages
+3. Check particular yum packagers
+4. Check a file, which is responsible for password
+5. Check all file which is created in yum
+6. Install “vsftpd.x86_64”
+7. Show all configuration file of “vsftpd”
+8. Check script file of “vsftpd”
+9. Create repo file
+10.Install new kernel
+• Task: 2
+1. Set text base logins only
+2. Set Graphical and text base logins
+3. Recover root password
+4. Repairbootloader
+• Task: 3
+1. Install all httpd package
+2. Open kickstart configuration graphically
+3. Configure new kickstart file
+4. Show full configuration of new kickstart file
+5. Validate new kickstart file
+6. All http on firewall
+7. Reload firewall.
+8. Start and restart http
+9. Install new foundation using new kickstart file
+Module :20
+Linux server - Manage basic networking & Security
+• Assignment Level Basic
+1. Full form of “ ping “
+2. What is the use of “ ping “ command ?
+3. What is the meaning of “prefix” is ?
+4. Which protocol is used in PING ?
+5. Port number of ICMP ?
+6. What is network ID and broadcast ID in IP range ?
+7. What is gateway ?
+8. What is SeLinux?
+9. Wright down the list of SELINUX modes and their uses
+10.In which mode, reboot is required after modification?
+11.What is SeLinux Booleans
+12.Which command is used to check the selinux contents
+13.What is firewall ? why we use
+14.What is firewall?
+15.Which command is used for graphically manage firewall?
+16.Which command is used for command line manage firewall?
+17.What is the use of “ –get-default-zone “ ?
+• Assignment Level Intermediate to Advance
+1. Which command is used to manage IP addressing in inux 7.0 ?
+2. By default which name will assign to network card in RHEL ?
+3. Which command is used to add/create a new network connection?
+4. From which command is used to show the network connection?
+• Task: 1
+1. Open graphically IP management
+2. Check current lan cpnnection
+3. Add new cpnnection name “KAMAL”
+4. Connect “eth0” to this new connection “KAMAL”
+5. Up the new connection “KAMAL”
+6. Show the info about the new connection
+7. Assign and append new IP on new connection “KAMAL”
+8. Reload the conenctions
+9. Again create new connection with same name “KAMAL”
+10.Delete both new connections one by one.
+11.Assign new hostname
+12.Restart the NetworkManager
+• Task :2
+13.Check current selinux mode
+14.Change selinux mode into “permissive”
+15.Change selinux mode into “Enforcing”
+16.Start server machine.
+17.Change the default selinux mode to permissive via VIM
+18.Check selinux contents on process
+19.Install httpd.services
+20.Check selinux contents on /var/www/html
+21.Create new .html file in /var/www/html
+22.Open this file in firefox and check is accessible or not
+23.Delete this .html file
+24.Create new .html file on desktop
+25.Move this file in /var/www/html
+26.Now, open this file and check is accessible or not
+27.Update selinux contents on this files
+28.See the status of all booleans
+29. “ON” the booleans of httpd_use_nfs
+30.Get a list of only modified Boolean
+31.Get details of all selinux logs
+• Task:3
+1. Show current default zone ?
+2. Show all firewall zone
+3. Get list of services which is running in current zone
+4. Show the all profile of all zone
+5. Remove ssh services
+6. Reload the firewall
+7. Add ssh services in firewall
+8. Graphicallymanagethefirewall
+Module 21
+Linux server -deployment of network services
+• Assignment Level Basic to Adanvce
+1. What is KVM?
+2. What is Virtualization?
+3. What are the key benefits of virtualization?
+4. For building RHEL virtualizations which two packages are required?
+5. What is nested virtualization?
+6. Full form of LDAP is
+7. What is LDAP?
+8. Which package is used for graphically access ldap configuration
+9. Explain is NFS
+10.Explain SMB
+11.What is the use of autofs?
+12.What is DNS?
+13.What is postfix mail server?
+14.What is iscsi storage
+• Task: 1
+1. Install qemu-kvm qemu-img
+2. nstall “virt-manager” , “ libvirt “ , “ libvirt-python “ , “ python-virtinst “ , “ linvirt-client”
+3. Create new virtual machine
+4. Create LDAP client
+5. Create NFS shared directory
+6. Do Automounting NFS
+7. Create SMB shared directory
+8. Mount and use SMB shared directory
+9. Configuration of DNS Server
+10.Postfix configuration
+11.MARIADB configuration
+TERM-4
+Ethical Hacking Assignment
+Module 27 Foundation
+1. Difference between hardware and software.
+2. Define IP address range and private address range.
+3. Explain Network protocol and Port number.
+4. Explain Types of Network Devices
+Module 28: Information Gathering
+1. What are the types of hacker?
+2. Explain in brief - Ethical hacking and cyber security.
+3. Explain Foot printing Methodology
+4. Find basic information using Google advance search operator and Pipl search
+5. Find vulnerability tool and check open port and service.
+Module 29: Hacking and System Malware
+1. What are the different types of hacking methods?
+2. Explain Types of Password Attacks
+3. Explain Password Cracking Tools: pwdump7
+4. Explain Types of Steganography with QuickStego
+5. Perform Practical on key logger tool.
+• Malware
+1. Define Types of Viruses.
+2. Create virus using Http Rat Trojan tool.
+3. Explain any one Antivirus with example.
+Module 30:
+ Web server and application base Attacks
+1. Explain MAC spoofing and Email spoofing
+2. Perform practical of MITM tool and social engineering Tool
+3. Explain Kali linux tool SYN Flooding Attack using Metasploit
+4. Find online email encryption service
+5. Types of Firewall
+6. Explain Evading Firewalls
+• Web Based Hacking
+1. What is Session Hijacking Explain with Techniques?
+2. Find DoS/DDoS Attack Tools
+3. Explain SYN Flooding Attack with example
+4. List of Web App Hacking Methodology
+5. SQL Injection Methodology
+6. Explain sql injection with any tool
+Module 31: Wireless and android hacking
+1. Wireless Terminologies
+2. Types of Wireless Antenna
+3. How to secure your mobile phone
+4. List of Android Phones Security Tools
+5. Perform practical Android phone hacking
